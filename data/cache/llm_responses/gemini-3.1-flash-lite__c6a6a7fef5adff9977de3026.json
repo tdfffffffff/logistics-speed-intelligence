@@ -1,0 +1,11 @@
+{
+  "model_key": "gemini-3.1-flash-lite",
+  "text": "The five slowest lanes are North Sumatra > South Sulawesi (10.3997), Bali > North Sumatra (9.47461), North Sumatra > Bali (9.16411), Riau > South Sulawesi (8.79985), and South Sulawesi > Riau (8.69213). These lanes represent the highest average transit times, indicating a need to investigate potential bottlenecks or logistics inefficiencies along these specific routes.",
+  "tokens_in": 206,
+  "tokens_out": 98,
+  "latency_s": 4.54,
+  "usd_cost": 6e-05,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

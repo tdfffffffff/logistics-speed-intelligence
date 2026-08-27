@@ -1,0 +1,11 @@
+{
+  "model_key": "gpt-oss-20b",
+  "text": "**Top issues (ranked)**  \n1. **R_23\u202f>\u202fR_04 \u2013 LP_B \u2013 15.427\u202fdays** \u2013 29\u202f081 parcels \u2013 358\u202f796 excess days \u2013 *First\u2011Mile Ops*  \n2. **R_08\u202f>\u202fR_09 \u2013 LP_B \u2013 14.298\u202fdays** \u2013 26\u202f725 parcels \u2013 305\u202f303 excess days \u2013 *First\u2011Mile Ops*  \n3. **R_38\u202f>\u202fR_06 \u2013 LP_H \u2013 15.903\u202fdays** \u2013 13\u202f147 parcels \u2013 169\u202f241 excess days \u2013 *Regional Duty Manager*  \n4. **R_07\u202f>\u202fR_23 \u2013 LP_H \u2013 13.389\u202fdays** \u2013 26\u202f610 parcels \u2013 287\u202f737 excess days \u2013 *Regional Duty Manager*  \n5. **R_20\u202f>\u202fR_14 \u2013 LP_B \u2013 15.884\u202fdays** \u2013 18\u202f079 parcels \u2013 242\u202f876 excess days \u2013 *First\u2011Mile Ops*  \n\n**Immediate actions**  \n- **First\u2011Mile Ops**: Investigate LP_B lanes R_23\u202f>\u202fR_04, R_08\u202f>\u202fR_09, R_20\u202f>\u202fR_14. Verify pickup, sorting, and hand\u2011off processes.  \n- **Regional Duty Manager**: Contact LP_H for lanes R_38\u202f>\u202fR_06 and R_07\u202f>\u202fR_23. Confirm vehicle availability and route planning.  \n- **All teams**: Cross\u2011check that parcel counts \u2265\u202f5\u202f000 per cell; if not, flag for data review.  \n\n**Watch list**  \n- **LP_B** \u2013 53 anomalies (2.53\u202f% of eligible cells) \u2013 *First\u2011Mile Ops*  \n- **LP_H** \u2013 8 anomalies (1.72\u202f% of eligible cells) \u2013 *Regional Duty Manager*  \n- **LP_A** \u2013 13 anomalies (0.58\u202f% of eligible cells) \u2013 *First\u2011Mile Ops*  \n- **LP_C** \u2013 12 anomalies (1.23\u202f% of eligible cells) \u2013 *First\u2011Mile Ops*  \n- **LP_D** \u2013 9 anomalies (1.16\u202f% of eligible cells) \u2013 *First\u2011Mile Ops*  \n\nMonitor these providers for any escalation in BWT or parcel volume spikes.",
+  "tokens_in": 3138,
+  "tokens_out": 568,
+  "latency_s": 1.35,
+  "usd_cost": 0.000598,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

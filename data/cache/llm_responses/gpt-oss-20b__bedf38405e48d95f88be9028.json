@@ -1,0 +1,11 @@
+{
+  "model_key": "gpt-oss-20b",
+  "text": "WITH weekly AS (\n    SELECT\n        logistics_provider,\n        week_block,\n        SUM(sum_bwt) / SUM(parcel_qty) AS avg_BWT\n    FROM spx\n    GROUP BY logistics_provider, week_block\n),\ndiff AS (\n    SELECT\n        w1.logistics_provider,\n        w1.avg_BWT AS first_week,\n        w2.avg_BWT AS last_week,\n        w2.avg_BWT - w1.avg_BWT AS diff\n    FROM weekly w1\n    JOIN weekly w2\n      ON w1.logistics_provider = w2.logistics_provider\n     AND w1.week_block = 'W1'\n     AND w2.week_block = 'W5'\n)\nSELECT\n    logistics_provider,\n    first_week,\n    last_week,\n    diff\nFROM diff\nORDER BY diff DESC\nLIMIT 10;",
+  "tokens_in": 631,
+  "tokens_out": 205,
+  "latency_s": 0.82,
+  "usd_cost": 0.000166,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

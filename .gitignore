@@ -1,0 +1,16 @@
+# Credentials — never commit
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+.Rhistory
+
+# Office lock files
+~$*

@@ -1,0 +1,11 @@
+{
+  "model_key": "gemini-3.1-flash-lite",
+  "text": "### Defects and likely upstream cause\n\n1.  **Schema/Mapping Drift:** 303 rows contain null or \"Uknown\" region identifiers, resulting in a 3.52% parcel volume mapping failure. The 1.93-day BWT delta between unmapped and mapped rows indicates non-random missingness, likely caused by two distinct upstream ingestion paths failing to normalize region keys.\n2.  **Temporal Logic Violation:** 32 rows (619,444 parcels) report `avg_APT > avg_BWT`. As `APT` is a sub-interval of `BWT`, this indicates a timestamp synchronization error at the source (e.g., handover timestamp recorded post-delivery).\n3.  **Null-Payload Ingestion:** 29 rows contain zero parcel counts and zero time values, indicating empty heartbeat signals or ghost records in the source stream.\n\n### Proposed data quality tests\n\n*   **`assert_region_mapping_completeness`**: `SELECT COUNT(*) FROM raw_data WHERE region_id IS NULL OR region_id = 'Uknown'`. Threshold: `0`. Owner: Data Platform.\n*   **`assert_temporal_integrity`**: `SELECT COUNT(*) FROM raw_data WHERE sum_apt > sum_bwt`. Threshold: `0`. Owner: Data Platform.\n*   **`assert_non_zero_payload`**: `SELECT COUNT(*) FROM raw_data WHERE parcel_qty = 0`. Threshold: `0`. Owner: Data Platform.\n\n### Backfill / remediation notes\n\n*   **Remediation:** The Data Platform team must reconcile the two upstream sources identified in `02_unmapped_regions` to unify region naming conventions. \n*   **Backfill:** The 32 rows quarantined for `APT > BWT` must be re-processed by the ETL owner to verify if the handover timestamp is a data entry error or a system latency artifact. \n*   **Metric Integrity:** Do not exclude the 303 unmapped rows from national aggregates; their exclusion biases `avg_BWT` downward by failing to account for the +1.93 day latency gap. Use the `R_36` fold-in method until upstream source mapping is corrected.",
+  "tokens_in": 1866,
+  "tokens_out": 479,
+  "latency_s": 2.66,
+  "usd_cost": 0.000378,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

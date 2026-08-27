@@ -1,0 +1,11 @@
+{
+  "model_key": "gemini-3.1-flash-lite",
+  "text": "SELECT lane, SUM(sum_bwt) / SUM(parcel_qty) AS avg_bwt\nFROM spx\nGROUP BY lane\nHAVING SUM(parcel_qty) >= 500000\nORDER BY avg_bwt DESC\nLIMIT 5;",
+  "tokens_in": 645,
+  "tokens_out": 60,
+  "latency_s": 6.77,
+  "usd_cost": 8.8e-05,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

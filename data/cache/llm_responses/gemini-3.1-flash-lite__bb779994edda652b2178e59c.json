@@ -1,0 +1,11 @@
+{
+  "model_key": "gemini-3.1-flash-lite",
+  "text": "The average of avg_BWT across all rows is 3.32968. This figure serves as the baseline metric for current operational performance.",
+  "tokens_in": 117,
+  "tokens_out": 32,
+  "latency_s": 4.49,
+  "usd_cost": 2.4e-05,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

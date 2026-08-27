@@ -1,0 +1,11 @@
+{
+  "model_key": "qwen3.6-27b-nothink",
+  "text": "Where we stand\n\nAcross 185,266,641 domestic parcels, the average buyer waiting time (BWT) is 3.33 days. Seller preparation accounts for 22.8% of this duration, averaging 0.758 days, while transit takes 2.571 days. Performance varies significantly by market: the Philippines leads with a 2.829-day BWT, followed by Thailand at 2.958 days. Malaysia sits at 3.399 days, while Indonesia lags considerably at 4.201 days. This disparity indicates that our network efficiency is heavily skewed by specific geographic challenges rather than a uniform operational issue.\n\nWhat changed and why\n\nSpeed is deteriorating. Weekly BWT rose from 3.217 days in Week 1 to 3.507 days in Week 5, despite volume increasing steadily. The primary driver is campaign-induced congestion. Data shows a strong correlation (0.886) between campaign volume spikes and BWT delays peaking two days later. On campaign days, BWT is 3.251 days, but it surges to 3.797 days on the following day. This lag suggests our downstream capacity cannot absorb the immediate post-campaign volume shock, causing bottlenecks that persist into the subsequent week. The trend is not random noise; it is a structural response to volume peaks that our current routing and handling processes fail to mitigate quickly.\n\nThe one decision I need from you\n\nWe must prioritize Indonesia\u2019s island-crossing lanes. This single segment represents 41.393% of our total recoverable parcel days, with an average BWT of 5.632 days against a benchmark. The excess delay here is 3.448 days per parcel, totaling 88,185,575 recoverable parcel days. While Malaysia\u2019s island-crossing lanes also show high delays (5.846 days BWT), the volume impact in Indonesia is larger. I recommend Regional Operations leadership direct immediate capacity and routing resources to optimize Indonesia\u2019s inter-island logistics. Addressing this specific bottleneck offers the highest leverage for reducing overall network BWT and stabilizing performance during peak periods.",
+  "tokens_in": 3844,
+  "tokens_out": 476,
+  "latency_s": 32.59,
+  "usd_cost": 0.001396,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

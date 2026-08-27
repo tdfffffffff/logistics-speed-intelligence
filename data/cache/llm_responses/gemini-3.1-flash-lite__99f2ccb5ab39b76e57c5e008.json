@@ -1,0 +1,11 @@
+{
+  "model_key": "gemini-3.1-flash-lite",
+  "text": "SELECT days_from_campaign, SUM(sum_bwt) / SUM(parcel_qty) AS avg_BWT FROM spx WHERE days_from_campaign IN (1, 2) GROUP BY days_from_campaign ORDER BY days_from_campaign;",
+  "tokens_in": 642,
+  "tokens_out": 57,
+  "latency_s": 8.49,
+  "usd_cost": 8.7e-05,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

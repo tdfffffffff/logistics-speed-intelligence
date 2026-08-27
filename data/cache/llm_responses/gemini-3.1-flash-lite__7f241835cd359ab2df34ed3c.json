@@ -1,0 +1,11 @@
+{
+  "model_key": "gemini-3.1-flash-lite",
+  "text": "### Where we stand\nOur current network-wide average buyer waiting time (BWT) is 3.33 days across 185,266,641 parcels. Performance varies significantly by country, with the Philippines recording the fastest average BWT at 2.829 days, while Indonesia faces the longest wait at 4.201 days. \n\n### What changed and why\nThe primary driver of volatility in our delivery speed is the impact of promotional campaigns. We observe a peak correlation of 0.886 between campaign volume and BWT, with a two-day lag. Following these spikes, BWT increases significantly\u2014for instance, reaching 3.797 days one day post-campaign compared to the 3.33-day global average. While seller preparation time (APT) accounts for 22.8% of the total BWT, the most substantial opportunity for improvement lies in island-crossing logistics. Specifically, island-crossing lanes in Indonesia and Malaysia represent 67.985% of our total recoverable parcel-day opportunity.\n\n### The one decision I need from you\nI need Regional Operations leadership to authorize a targeted review of island-crossing transit workflows in Indonesia and Malaysia. Addressing the excess BWT in these specific segments could recover 144,837,651 parcel-days, representing the vast majority of our current network inefficiency.",
+  "tokens_in": 4029,
+  "tokens_out": 297,
+  "latency_s": 2.1,
+  "usd_cost": 0.000522,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

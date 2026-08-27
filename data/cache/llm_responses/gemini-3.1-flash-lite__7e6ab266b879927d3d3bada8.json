@@ -1,0 +1,11 @@
+{
+  "model_key": "gemini-3.1-flash-lite",
+  "text": "Buyer waiting time decreases slightly from 3.79677 days on the first day after the campaign to 3.72377 days on the second day. This trend suggests that operational pressure begins to ease shortly after the promotional period concludes. You should monitor these levels to determine if current staffing is sufficient to handle the post-campaign volume decline.",
+  "tokens_in": 146,
+  "tokens_out": 74,
+  "latency_s": 4.6,
+  "usd_cost": 4.4e-05,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

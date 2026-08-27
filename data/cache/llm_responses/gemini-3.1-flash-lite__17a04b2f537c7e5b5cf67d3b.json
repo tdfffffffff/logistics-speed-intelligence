@@ -1,0 +1,11 @@
+{
+  "model_key": "gemini-3.1-flash-lite",
+  "text": "### Data quality findings\nThe dataset contains 8,995 rows (185,886,085 parcels). Quality assurance identified 61 quarantined rows:\n*   **Zero-parcel rows:** 29 rows were removed as they contained zero parcels and zero time values, preventing division-by-zero errors.\n*   **Logical inconsistencies:** 32 rows (619,444 parcels) were quarantined because `avg_APT` exceeded `avg_BWT`. These are excluded from headline metrics.\n*   **Unmapped regions:** 303 rows (3.52% of total volume) were folded into 'R_36'. These rows show a consistent performance gap, with an `avg_BWT` of 5.111 days compared to 3.265 days for mapped rows.\n\n### Impact on reported metrics\n*   **Headline Accuracy:** The final analysis includes 8,934 rows (99.32% of input) and 185,266,641 parcels (99.67% of total volume).\n*   **Metric Bias:** The exclusion of unmapped regions likely understates national `avg_BWT`, as these regions are slower than mapped regions in 18 of 18 country-provider pairs.\n*   **Anomaly Detection:** 103 anomalies were flagged using a modified z-score (threshold 6.0). LP_B accounts for 53 of these incidents. The top 10 incidents show significant deviations, such as the R_23 > R_04 lane on 2026-01-19, which recorded an `avg_BWT` of 15.427 days against a baseline of 3.089 days.\n\n### Checks to run before publishing\nRegional BI / analytics should perform the following before release:\n1.  **Upstream Data Audit:** Investigate the two broken upstream paths causing the 'Uknown' and null region labels (303 rows).\n2.  **Logic Review:** Validate the 32 quarantined rows where `avg_APT` > `avg_BWT` with Data Engineering to determine if this represents a systemic reporting error or specific edge-case processing.\n3.  **Anomaly Validation:** Confirm if the 103 flagged anomalies (specifically the 53 attributed to LP_B) are verified operational incidents or data entry errors.\n4.  **SLA/Satisfaction/Cost/Fleet/Hub:** INSUFFICIENT_DATA. Do not attempt to report on these metrics as they are not present in the dataset.",
+  "tokens_in": 3718,
+  "tokens_out": 568,
+  "latency_s": 3.15,
+  "usd_cost": 0.000599,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

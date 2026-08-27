@@ -1,0 +1,877 @@
+{
+  "meta": {
+    "generated_at": "2026-08-27T08:12:20",
+    "date_range": [
+      "2026-01-01",
+      "2026-01-30"
+    ],
+    "days_covered": 30,
+    "rows_analysed": 8934,
+    "total_parcels": 185266641,
+    "countries": [
+      "ID",
+      "MY",
+      "PH",
+      "TH"
+    ],
+    "providers": [
+      "2GO Express",
+      "DHL",
+      "FedEx",
+      "J&T",
+      "Kerry Express",
+      "LBC Express",
+      "Ninja Van",
+      "Pos Indonesia",
+      "Pos Malaysia",
+      "SiCepat"
+    ],
+    "metric_definitions": {
+      "avg_BWT": "SUM(sum_bwt)/SUM(parcel_qty) - buyer waiting time, days, paid to delivered",
+      "avg_APT": "SUM(sum_apt)/SUM(parcel_qty) - seller preparation time, days, paid to handover",
+      "avg_transit": "avg_BWT - avg_APT - the 3PL-controlled portion"
+    },
+    "coverage_caveat": "Domestic lanes only: buyer_country equals seller_country in 100% of rows."
+  },
+  "headline": {
+    "avg_BWT_days": 3.33,
+    "avg_APT_days": 0.758,
+    "avg_transit_days": 2.571,
+    "total_parcels": 185266641,
+    "apt_share_of_bwt_pct": 22.8
+  },
+  "spec_grains": {
+    "by_provider": [
+      {
+        "logistics_provider": "2GO Express",
+        "parcel_qty": 9891760.0,
+        "avg_BWT": 2.524,
+        "avg_APT": 0.767
+      },
+      {
+        "logistics_provider": "FedEx",
+        "parcel_qty": 5047352.0,
+        "avg_BWT": 2.885,
+        "avg_APT": 0.731
+      },
+      {
+        "logistics_provider": "J&T",
+        "parcel_qty": 46651053.0,
+        "avg_BWT": 2.948,
+        "avg_APT": 0.737
+      },
+      {
+        "logistics_provider": "DHL",
+        "parcel_qty": 13188766.0,
+        "avg_BWT": 3.146,
+        "avg_APT": 0.723
+      },
+      {
+        "logistics_provider": "Ninja Van",
+        "parcel_qty": 42825476.0,
+        "avg_BWT": 3.251,
+        "avg_APT": 0.762
+      },
+      {
+        "logistics_provider": "Kerry Express",
+        "parcel_qty": 14463422.0,
+        "avg_BWT": 3.339,
+        "avg_APT": 0.788
+      },
+      {
+        "logistics_provider": "LBC Express",
+        "parcel_qty": 9679445.0,
+        "avg_BWT": 3.489,
+        "avg_APT": 0.777
+      },
+      {
+        "logistics_provider": "Pos Malaysia",
+        "parcel_qty": 19213886.0,
+        "avg_BWT": 3.754,
+        "avg_APT": 0.823
+      },
+      {
+        "logistics_provider": "Pos Indonesia",
+        "parcel_qty": 17481652.0,
+        "avg_BWT": 3.987,
+        "avg_APT": 0.749
+      },
+      {
+        "logistics_provider": "SiCepat",
+        "parcel_qty": 6823829.0,
+        "avg_BWT": 5.16,
+        "avg_APT": 0.714
+      }
+    ],
+    "by_route_country": [
+      {
+        "seller_country": "ID",
+        "buyer_country": "ID",
+        "parcel_qty": 42807195.0,
+        "avg_BWT": 4.201,
+        "avg_APT": 0.735
+      },
+      {
+        "seller_country": "MY",
+        "buyer_country": "MY",
+        "parcel_qty": 48702496.0,
+        "avg_BWT": 3.399,
+        "avg_APT": 0.796
+      },
+      {
+        "seller_country": "PH",
+        "buyer_country": "PH",
+        "parcel_qty": 45198766.0,
+        "avg_BWT": 2.829,
+        "avg_APT": 0.753
+      },
+      {
+        "seller_country": "TH",
+        "buyer_country": "TH",
+        "parcel_qty": 48558184.0,
+        "avg_BWT": 2.958,
+        "avg_APT": 0.746
+      }
+    ],
+    "by_week": [
+      {
+        "week_block": "W1",
+        "parcel_qty": 40568364.0,
+        "avg_BWT": 3.217,
+        "avg_APT": 0.739
+      },
+      {
+        "week_block": "W2",
+        "parcel_qty": 43046353.0,
+        "avg_BWT": 3.324,
+        "avg_APT": 0.765
+      },
+      {
+        "week_block": "W3",
+        "parcel_qty": 44441846.0,
+        "avg_BWT": 3.376,
+        "avg_APT": 0.764
+      },
+      {
+        "week_block": "W4",
+        "parcel_qty": 45486960.0,
+        "avg_BWT": 3.345,
+        "avg_APT": 0.757
+      },
+      {
+        "week_block": "W5",
+        "parcel_qty": 11723118.0,
+        "avg_BWT": 3.507,
+        "avg_APT": 0.789
+      }
+    ],
+    "global": {
+      "parcel_qty": 185266641,
+      "avg_BWT": 3.33,
+      "avg_APT": 0.758
+    }
+  },
+  "by_country": [
+    {
+      "buyer_country": "PH",
+      "parcel_qty": 45198766.0,
+      "avg_BWT": 2.829,
+      "avg_APT": 0.753,
+      "avg_transit": 2.075
+    },
+    {
+      "buyer_country": "TH",
+      "parcel_qty": 48558184.0,
+      "avg_BWT": 2.958,
+      "avg_APT": 0.746,
+      "avg_transit": 2.212
+    },
+    {
+      "buyer_country": "MY",
+      "parcel_qty": 48702496.0,
+      "avg_BWT": 3.399,
+      "avg_APT": 0.796,
+      "avg_transit": 2.603
+    },
+    {
+      "buyer_country": "ID",
+      "parcel_qty": 42807195.0,
+      "avg_BWT": 4.201,
+      "avg_APT": 0.735,
+      "avg_transit": 3.467
+    }
+  ],
+  "by_lane_class": [
+    {
+      "lane_class": "Intra-region",
+      "parcel_qty": 20199574.0,
+      "avg_BWT": 1.349,
+      "avg_APT": 0.754,
+      "avg_transit": 0.595
+    },
+    {
+      "lane_class": "Inter-region (land)",
+      "parcel_qty": 90357258.0,
+      "avg_BWT": 2.564,
+      "avg_APT": 0.754,
+      "avg_transit": 1.81
+    },
+    {
+      "lane_class": "Island-crossing",
+      "parcel_qty": 68197503.0,
+      "avg_BWT": 4.761,
+      "avg_APT": 0.77,
+      "avg_transit": 3.991
+    },
+    {
+      "lane_class": "Unmapped",
+      "parcel_qty": 6512306.0,
+      "avg_BWT": 5.111,
+      "avg_APT": 0.712,
+      "avg_transit": 4.398
+    }
+  ],
+  "provider_fairness": {
+    "note": "naive_bwt is the raw average and is confounded by which lanes each provider serves. matched_gap_vs_lane compares each provider only against rivals on the SAME lanes and is the fair comparison.",
+    "providers": [
+      {
+        "logistics_provider": "FedEx",
+        "parcel_qty": 5047352.0,
+        "naive_bwt": 2.885,
+        "matched_gap_vs_lane": -0.301,
+        "lanes_compared": 137.0,
+        "naive_rank": 2.0,
+        "matched_rank": 1.0,
+        "rank_shift": 1.0
+      },
+      {
+        "logistics_provider": "J&T",
+        "parcel_qty": 46651053.0,
+        "naive_bwt": 2.948,
+        "matched_gap_vs_lane": -0.269,
+        "lanes_compared": 332.0,
+        "naive_rank": 3.0,
+        "matched_rank": 2.0,
+        "rank_shift": 1.0
+      },
+      {
+        "logistics_provider": "DHL",
+        "parcel_qty": 13188766.0,
+        "naive_bwt": 3.146,
+        "matched_gap_vs_lane": -0.252,
+        "lanes_compared": 278.0,
+        "naive_rank": 4.0,
+        "matched_rank": 3.0,
+        "rank_shift": 1.0
+      },
+      {
+        "logistics_provider": "2GO Express",
+        "parcel_qty": 9891760.0,
+        "naive_bwt": 2.524,
+        "matched_gap_vs_lane": -0.22,
+        "lanes_compared": 78.0,
+        "naive_rank": 1.0,
+        "matched_rank": 4.0,
+        "rank_shift": -3.0
+      },
+      {
+        "logistics_provider": "Pos Indonesia",
+        "parcel_qty": 17481652.0,
+        "naive_bwt": 3.987,
+        "matched_gap_vs_lane": -0.198,
+        "lanes_compared": 70.0,
+        "naive_rank": 9.0,
+        "matched_rank": 5.0,
+        "rank_shift": 4.0
+      },
+      {
+        "logistics_provider": "Ninja Van",
+        "parcel_qty": 42825476.0,
+        "naive_bwt": 3.251,
+        "matched_gap_vs_lane": -0.032,
+        "lanes_compared": 330.0,
+        "naive_rank": 5.0,
+        "matched_rank": 6.0,
+        "rank_shift": -1.0
+      },
+      {
+        "logistics_provider": "Kerry Express",
+        "parcel_qty": 14463422.0,
+        "naive_bwt": 3.339,
+        "matched_gap_vs_lane": 0.37,
+        "lanes_compared": 93.0,
+        "naive_rank": 6.0,
+        "matched_rank": 7.0,
+        "rank_shift": -1.0
+      },
+      {
+        "logistics_provider": "Pos Malaysia",
+        "parcel_qty": 19213886.0,
+        "naive_bwt": 3.754,
+        "matched_gap_vs_lane": 0.391,
+        "lanes_compared": 94.0,
+        "naive_rank": 8.0,
+        "matched_rank": 8.0,
+        "rank_shift": 0.0
+      },
+      {
+        "logistics_provider": "LBC Express",
+        "parcel_qty": 9679445.0,
+        "naive_bwt": 3.489,
+        "matched_gap_vs_lane": 0.548,
+        "lanes_compared": 79.0,
+        "naive_rank": 7.0,
+        "matched_rank": 9.0,
+        "rank_shift": -2.0
+      },
+      {
+        "logistics_provider": "SiCepat",
+        "parcel_qty": 6823829.0,
+        "naive_bwt": 5.16,
+        "matched_gap_vs_lane": 0.913,
+        "lanes_compared": 68.0,
+        "naive_rank": 10.0,
+        "matched_rank": 10.0,
+        "rank_shift": 0.0
+      }
+    ]
+  },
+  "campaign_effect": {
+    "detected_campaign_days": [
+      "2026-01-08",
+      "2026-01-09",
+      "2026-01-17",
+      "2026-01-18",
+      "2026-01-26",
+      "2026-01-27"
+    ],
+    "detection_method": "daily volume more than 1 robust SD (median/MAD) above the median",
+    "lag_correlations": [
+      {
+        "lag_days": 0.0,
+        "correlation": -0.475,
+        "n": 30.0
+      },
+      {
+        "lag_days": 1.0,
+        "correlation": 0.263,
+        "n": 29.0
+      },
+      {
+        "lag_days": 2.0,
+        "correlation": 0.886,
+        "n": 28.0
+      },
+      {
+        "lag_days": 3.0,
+        "correlation": 0.417,
+        "n": 27.0
+      },
+      {
+        "lag_days": 4.0,
+        "correlation": -0.148,
+        "n": 26.0
+      },
+      {
+        "lag_days": 5.0,
+        "correlation": -0.181,
+        "n": 25.0
+      }
+    ],
+    "peak_lag_days": 2,
+    "peak_correlation": 0.886,
+    "peak_ci_95": [
+      0.776,
+      0.953
+    ],
+    "ci_method": "moving-block bootstrap, block=5 days, 5000 resamples",
+    "bwt_by_days_from_campaign": [
+      {
+        "days_from_campaign": -7.0,
+        "parcel_qty": 5639798.0,
+        "avg_BWT": 3.182
+      },
+      {
+        "days_from_campaign": -6.0,
+        "parcel_qty": 5671962.0,
+        "avg_BWT": 3.193
+      },
+      {
+        "days_from_campaign": -5.0,
+        "parcel_qty": 5876084.0,
+        "avg_BWT": 3.331
+      },
+      {
+        "days_from_campaign": -4.0,
+        "parcel_qty": 5957499.0,
+        "avg_BWT": 3.19
+      },
+      {
+        "days_from_campaign": -3.0,
+        "parcel_qty": 17687276.0,
+        "avg_BWT": 3.262
+      },
+      {
+        "days_from_campaign": -2.0,
+        "parcel_qty": 17864255.0,
+        "avg_BWT": 3.23
+      },
+      {
+        "days_from_campaign": -1.0,
+        "parcel_qty": 18446039.0,
+        "avg_BWT": 3.282
+      },
+      {
+        "days_from_campaign": 0.0,
+        "parcel_qty": 46178172.0,
+        "avg_BWT": 3.251
+      },
+      {
+        "days_from_campaign": 1.0,
+        "parcel_qty": 15668684.0,
+        "avg_BWT": 3.797
+      },
+      {
+        "days_from_campaign": 2.0,
+        "parcel_qty": 15838754.0,
+        "avg_BWT": 3.724
+      },
+      {
+        "days_from_campaign": 3.0,
+        "parcel_qty": 18351982.0,
+        "avg_BWT": 3.241
+      },
+      {
+        "days_from_campaign": 4.0,
+        "parcel_qty": 12086136.0,
+        "avg_BWT": 3.161
+      }
+    ]
+  },
+  "anomalies": {
+    "method": "modified z-score (median/MAD) of avg_BWT against each lane x provider baseline",
+    "threshold_z": 6.0,
+    "min_parcels_per_cell": 5000,
+    "total_flagged": 103,
+    "slower_count": 97,
+    "faster_count": 6,
+    "pct_within_2_days_after_campaign": 61.2,
+    "by_provider": [
+      {
+        "logistics_provider": "Ninja Van",
+        "anomalies": 53,
+        "eligible_cells": 2098,
+        "anomaly_rate_pct": 2.53
+      },
+      {
+        "logistics_provider": "J&T",
+        "anomalies": 13,
+        "eligible_cells": 2243,
+        "anomaly_rate_pct": 0.58
+      },
+      {
+        "logistics_provider": "Pos Malaysia",
+        "anomalies": 12,
+        "eligible_cells": 978,
+        "anomaly_rate_pct": 1.23
+      },
+      {
+        "logistics_provider": "Pos Indonesia",
+        "anomalies": 9,
+        "eligible_cells": 777,
+        "anomaly_rate_pct": 1.16
+      },
+      {
+        "logistics_provider": "LBC Express",
+        "anomalies": 8,
+        "eligible_cells": 466,
+        "anomaly_rate_pct": 1.72
+      },
+      {
+        "logistics_provider": "Kerry Express",
+        "anomalies": 5,
+        "eligible_cells": 752,
+        "anomaly_rate_pct": 0.66
+      },
+      {
+        "logistics_provider": "SiCepat",
+        "anomalies": 2,
+        "eligible_cells": 291,
+        "anomaly_rate_pct": 0.69
+      },
+      {
+        "logistics_provider": "2GO Express",
+        "anomalies": 1,
+        "eligible_cells": 470,
+        "anomaly_rate_pct": 0.21
+      }
+    ],
+    "top_incidents": [
+      {
+        "dt": "2026-01-12",
+        "lane": "Perak > Selangor",
+        "logistics_provider": "Ninja Van",
+        "parcel_qty": 17757,
+        "avg_BWT": 15.766,
+        "lane_baseline_bwt": 1.438,
+        "excess_parcel_days": 254423.0
+      },
+      {
+        "dt": "2026-01-11",
+        "lane": "Central Visayas > Northern Mindanao",
+        "logistics_provider": "LBC Express",
+        "parcel_qty": 26610,
+        "avg_BWT": 13.389,
+        "lane_baseline_bwt": 2.576,
+        "excess_parcel_days": 287737.0
+      },
+      {
+        "dt": "2026-01-23",
+        "lane": "Ilocos Region > Central Luzon",
+        "logistics_provider": "Ninja Van",
+        "parcel_qty": 33689,
+        "avg_BWT": 10.543,
+        "lane_baseline_bwt": 1.317,
+        "excess_parcel_days": 310804.0
+      },
+      {
+        "dt": "2026-01-01",
+        "lane": "Korat > Chonburi",
+        "logistics_provider": "Ninja Van",
+        "parcel_qty": 10972,
+        "avg_BWT": 11.489,
+        "lane_baseline_bwt": 1.593,
+        "excess_parcel_days": 108574.0
+      },
+      {
+        "dt": "2026-01-12",
+        "lane": "West Visayas > Central Luzon",
+        "logistics_provider": "LBC Express",
+        "parcel_qty": 13147,
+        "avg_BWT": 15.903,
+        "lane_baseline_bwt": 3.03,
+        "excess_parcel_days": 169241.0
+      },
+      {
+        "dt": "2026-01-16",
+        "lane": "Songkhla > Surat Thani",
+        "logistics_provider": "Ninja Van",
+        "parcel_qty": 19296,
+        "avg_BWT": 10.537,
+        "lane_baseline_bwt": 2.097,
+        "excess_parcel_days": 162853.0
+      },
+      {
+        "dt": "2026-01-15",
+        "lane": "Negeri Sembilan > Kedah",
+        "logistics_provider": "Ninja Van",
+        "parcel_qty": 18079,
+        "avg_BWT": 15.884,
+        "lane_baseline_bwt": 2.45,
+        "excess_parcel_days": 242876.0
+      },
+      {
+        "dt": "2026-01-09",
+        "lane": "Chiang Mai > Chonburi",
+        "logistics_provider": "Ninja Van",
+        "parcel_qty": 26725,
+        "avg_BWT": 14.298,
+        "lane_baseline_bwt": 2.875,
+        "excess_parcel_days": 305303.0
+      },
+      {
+        "dt": "2026-01-19",
+        "lane": "Northern Mindanao > Calabarzon",
+        "logistics_provider": "Ninja Van",
+        "parcel_qty": 29081,
+        "avg_BWT": 15.427,
+        "lane_baseline_bwt": 3.089,
+        "excess_parcel_days": 358796.0
+      },
+      {
+        "dt": "2026-01-23",
+        "lane": "Kedah > Johor",
+        "logistics_provider": "Ninja Van",
+        "parcel_qty": 13187,
+        "avg_BWT": 10.062,
+        "lane_baseline_bwt": 2.803,
+        "excess_parcel_days": 95716.0
+      }
+    ]
+  },
+  "impact": {
+    "benchmark": "median avg_BWT across country x lane_class segments",
+    "total_recoverable_parcel_days": 213044686.0,
+    "segments": [
+      {
+        "buyer_country": "ID",
+        "lane_class": "Island-crossing",
+        "parcel_qty": 25577115.0,
+        "avg_BWT": 5.632,
+        "excess_bwt": 3.448,
+        "recoverable_parcel_days": 88185574.988,
+        "pct_of_total_opportunity": 41.393
+      },
+      {
+        "buyer_country": "MY",
+        "lane_class": "Island-crossing",
+        "parcel_qty": 15469227.0,
+        "avg_BWT": 5.846,
+        "excess_bwt": 3.662,
+        "recoverable_parcel_days": 56652076.339,
+        "pct_of_total_opportunity": 26.592
+      },
+      {
+        "buyer_country": "TH",
+        "lane_class": "Inter-region (land)",
+        "parcel_qty": 42483992.0,
+        "avg_BWT": 3.033,
+        "excess_bwt": 0.849,
+        "recoverable_parcel_days": 36070658.975,
+        "pct_of_total_opportunity": 16.931
+      },
+      {
+        "buyer_country": "PH",
+        "lane_class": "Island-crossing",
+        "parcel_qty": 27151161.0,
+        "avg_BWT": 3.323,
+        "excess_bwt": 1.138,
+        "recoverable_parcel_days": 30911397.578,
+        "pct_of_total_opportunity": 14.509
+      },
+      {
+        "buyer_country": "MY",
+        "lane_class": "Inter-region (land)",
+        "parcel_qty": 26343401.0,
+        "avg_BWT": 2.231,
+        "excess_bwt": 0.047,
+        "recoverable_parcel_days": 1224977.786,
+        "pct_of_total_opportunity": 0.575
+      }
+    ]
+  },
+  "data_quality": {
+    "audit_log": [
+      {
+        "step": "00_load",
+        "action": "loaded",
+        "rows_affected": 8995,
+        "parcels_affected": 185886085,
+        "rationale": "Raw rows as delivered in the CSV."
+      },
+      {
+        "step": "01_duplicates",
+        "action": "verified_none",
+        "rows_affected": 0,
+        "parcels_affected": 0,
+        "rationale": "The 6-column grain key is unique (0 duplicates), so each row is one date x lane x provider cell and no double-counting is possible."
+      },
+      {
+        "step": "02_unmapped_regions",
+        "action": "normalised_and_flagged",
+        "rows_affected": 325,
+        "parcels_affected": 6512306,
+        "rationale": "'Uknown' (typo, 145 rows) and null (132 rows) folded into 'UNKNOWN'. Two spellings implies two broken upstream paths. Retained for country/provider/global totals (3.5% of volume -- dropping would bias them); excluded from lane-level analysis only."
+      },
+      {
+        "step": "03_negative_values",
+        "action": "verified_none",
+        "rows_affected": 0,
+        "parcels_affected": 0,
+        "rationale": "parcel_qty, sum_apt and sum_bwt must all be non-negative; elapsed time cannot be negative and a parcel count cannot be."
+      },
+      {
+        "step": "04_zero_parcel_rows",
+        "action": "quarantined",
+        "rows_affected": 29,
+        "parcels_affected": 0,
+        "rationale": "29 rows report 0 parcels with sum_apt = sum_bwt = 0. They are arithmetically harmless inside SUM/SUM aggregates (adding 0 to both numerator and denominator) but produce 0/0 in row-level ratios. Removed for safety at zero cost to any total, since they carry no parcels."
+      },
+      {
+        "step": "05_apt_exceeds_bwt",
+        "action": "quarantined",
+        "rows_affected": 32,
+        "parcels_affected": 619444,
+        "rationale": "32 rows have avg_APT > avg_BWT, which the brief's image1 timeline makes impossible (APT is a sub-interval of BWT). Excluded from headline speed metrics and handed in full to the BI and Data Engineering stakeholders -- for them these rows are the deliverable, not noise."
+      },
+      {
+        "step": "06_extreme_intra_region",
+        "action": "flagged_only",
+        "rows_affected": 5,
+        "parcels_affected": 112786,
+        "rationale": "5 same-region rows exceed 4 days against a ~1.4-day baseline. Retained: these are the operational incidents the Operations stakeholder needs to see. Deleting outliers would delete the finding."
+      },
+      {
+        "step": "07_final",
+        "action": "retained",
+        "rows_affected": 8934,
+        "parcels_affected": 185266641,
+        "rationale": "8934 rows kept (99.32% of input), carrying 99.67% of all parcels."
+      }
+    ],
+    "rows_quarantined": 61,
+    "quarantine_reasons": {
+      "zero_parcel_qty": 29,
+      "apt_exceeds_bwt": 32
+    },
+    "unmapped_region_rows": 303,
+    "unmapped_region_pct_of_parcels": 3.52,
+    "informative_missingness": {
+      "unmapped_avg_BWT": 5.111,
+      "mapped_avg_BWT": 3.265,
+      "finding": "Unmapped-region rows are slower than mapped rows in 18 of 18 country x provider pairs, median gap +1.93 days. The missingness is not random: dropping these rows understates national BWT."
+    }
+  },
+  "daily_series": [
+    {
+      "dt": "2026-01-01",
+      "parcel_qty": 5639798.0,
+      "avg_BWT": 3.182
+    },
+    {
+      "dt": "2026-01-02",
+      "parcel_qty": 5671962.0,
+      "avg_BWT": 3.193
+    },
+    {
+      "dt": "2026-01-03",
+      "parcel_qty": 5876084.0,
+      "avg_BWT": 3.331
+    },
+    {
+      "dt": "2026-01-04",
+      "parcel_qty": 5957499.0,
+      "avg_BWT": 3.19
+    },
+    {
+      "dt": "2026-01-05",
+      "parcel_qty": 5759926.0,
+      "avg_BWT": 3.227
+    },
+    {
+      "dt": "2026-01-06",
+      "parcel_qty": 5684639.0,
+      "avg_BWT": 3.222
+    },
+    {
+      "dt": "2026-01-07",
+      "parcel_qty": 5978456.0,
+      "avg_BWT": 3.173
+    },
+    {
+      "dt": "2026-01-08",
+      "parcel_qty": 7643213.0,
+      "avg_BWT": 3.114
+    },
+    {
+      "dt": "2026-01-09",
+      "parcel_qty": 7455942.0,
+      "avg_BWT": 3.251
+    },
+    {
+      "dt": "2026-01-10",
+      "parcel_qty": 5247898.0,
+      "avg_BWT": 3.657
+    },
+    {
+      "dt": "2026-01-11",
+      "parcel_qty": 4857291.0,
+      "avg_BWT": 3.829
+    },
+    {
+      "dt": "2026-01-12",
+      "parcel_qty": 6101518.0,
+      "avg_BWT": 3.294
+    },
+    {
+      "dt": "2026-01-13",
+      "parcel_qty": 6024117.0,
+      "avg_BWT": 3.166
+    },
+    {
+      "dt": "2026-01-14",
+      "parcel_qty": 5716374.0,
+      "avg_BWT": 3.163
+    },
+    {
+      "dt": "2026-01-15",
+      "parcel_qty": 6079734.0,
+      "avg_BWT": 3.276
+    },
+    {
+      "dt": "2026-01-16",
+      "parcel_qty": 6232423.0,
+      "avg_BWT": 3.296
+    },
+    {
+      "dt": "2026-01-17",
+      "parcel_qty": 7765515.0,
+      "avg_BWT": 3.29
+    },
+    {
+      "dt": "2026-01-18",
+      "parcel_qty": 7633100.0,
+      "avg_BWT": 3.315
+    },
+    {
+      "dt": "2026-01-19",
+      "parcel_qty": 5222265.0,
+      "avg_BWT": 3.841
+    },
+    {
+      "dt": "2026-01-20",
+      "parcel_qty": 5621649.0,
+      "avg_BWT": 3.631
+    },
+    {
+      "dt": "2026-01-21",
+      "parcel_qty": 5887160.0,
+      "avg_BWT": 3.098
+    },
+    {
+      "dt": "2026-01-22",
+      "parcel_qty": 6062019.0,
+      "avg_BWT": 3.155
+    },
+    {
+      "dt": "2026-01-23",
+      "parcel_qty": 6210976.0,
+      "avg_BWT": 3.387
+    },
+    {
+      "dt": "2026-01-24",
+      "parcel_qty": 6099882.0,
+      "avg_BWT": 3.192
+    },
+    {
+      "dt": "2026-01-25",
+      "parcel_qty": 6235160.0,
+      "avg_BWT": 3.373
+    },
+    {
+      "dt": "2026-01-26",
+      "parcel_qty": 7575600.0,
+      "avg_BWT": 3.268
+    },
+    {
+      "dt": "2026-01-27",
+      "parcel_qty": 8104802.0,
+      "avg_BWT": 3.268
+    },
+    {
+      "dt": "2026-01-28",
+      "parcel_qty": 5198521.0,
+      "avg_BWT": 3.893
+    },
+    {
+      "dt": "2026-01-29",
+      "parcel_qty": 5359814.0,
+      "avg_BWT": 3.726
+    },
+    {
+      "dt": "2026-01-30",
+      "parcel_qty": 6363304.0,
+      "avg_BWT": 3.322
+    }
+  ]
+}

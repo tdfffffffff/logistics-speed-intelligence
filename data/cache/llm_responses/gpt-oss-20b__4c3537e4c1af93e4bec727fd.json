@@ -1,0 +1,11 @@
+{
+  "model_key": "gpt-oss-20b",
+  "text": "INSUFFICIENT_DATA",
+  "tokens_in": 626,
+  "tokens_out": 22,
+  "latency_s": 0.6,
+  "usd_cost": 7.4e-05,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

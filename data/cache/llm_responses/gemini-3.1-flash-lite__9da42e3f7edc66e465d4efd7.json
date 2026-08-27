@@ -1,0 +1,11 @@
+{
+  "model_key": "gemini-3.1-flash-lite",
+  "text": "### Fair performance ranking\nWhen evaluating performance by comparing providers only against rivals on the same domestic lanes, the ranking is as follows:\n\n1. **LP_J** (matched_gap: -0.301)\n2. **LP_A** (matched_gap: -0.269)\n3. **LP_F** (matched_gap: -0.252)\n4. **LP_G** (matched_gap: -0.220)\n5. **LP_D** (matched_gap: -0.198)\n6. **LP_B** (matched_gap: -0.032)\n7. **LP_E** (matched_gap: 0.370)\n8. **LP_C** (matched_gap: 0.391)\n9. **LP_H** (matched_gap: 0.548)\n10. **LP_I** (matched_gap: 0.913)\n\n### Where the raw numbers mislead\nRaw `naive_bwt` figures often obscure true performance due to lane-mix bias. For example, **LP_G** appears to be the top performer with a `naive_bwt` of 2.524, but when adjusted for lane-matched performance, it drops to 4th place. Conversely, **LP_D** appears to be a poor performer with a `naive_bwt` of 3.987, yet it ranks 5th in the fair comparison, indicating its raw score is heavily influenced by the specific, slower lanes it serves.\n\n### Conversations to open\n**Regional 3PL / partner management** should prioritize the following discussions:\n\n*   **LP_B (High Anomaly Volume):** Despite a mid-tier matched ranking, LP_B accounts for 53 of the 103 total flagged anomalies (an anomaly rate of 2.53%). Several incidents, such as the R_23 > R_04 lane on 2026-01-19, resulted in significant excess parcel days (358,796). This provider requires an immediate operational review to address systemic instability.\n*   **LP_H (Performance Volatility):** LP_H shows a high matched gap (0.548) and a concerning anomaly rate of 1.72%. With incidents like the R_07 > R_23 lane on 2026-01-11 causing 287,737 excess parcel days, this partner is underperforming relative to its peers on the same lanes.\n*   **LP_I (Systemic Underperformance):** LP_I holds the worst matched gap (0.913) and the highest `naive_bwt` (5.16). Given that this is a lane-matched metric, the data confirms this provider is consistently slower than competitors across its entire network.\n\nINSUFFICIENT_DATA for SLA, on-time rates, cost, satisfaction scores, or fleet/hub-specific metrics.",
+  "tokens_in": 3936,
+  "tokens_out": 674,
+  "latency_s": 3.18,
+  "usd_cost": 0.000663,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

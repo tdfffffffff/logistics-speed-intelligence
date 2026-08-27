@@ -1,0 +1,11 @@
+{
+  "model_key": "gemini-3.1-flash-lite",
+  "text": "SELECT \n    buyer_country, \n    lane_class, \n    SUM(sum_bwt) / SUM(parcel_qty) AS avg_BWT, \n    SUM(sum_apt) / SUM(parcel_qty) AS avg_APT,\n    (SUM(sum_bwt) / SUM(parcel_qty)) - (SUM(sum_apt) / SUM(parcel_qty)) AS avg_transit\nFROM spx\nWHERE lane_class IN ('Intra-region', 'Island-crossing')\nGROUP BY 1, 2\nORDER BY 1, 2;",
+  "tokens_in": 960,
+  "tokens_out": 133,
+  "latency_s": 1.34,
+  "usd_cost": 0.000149,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

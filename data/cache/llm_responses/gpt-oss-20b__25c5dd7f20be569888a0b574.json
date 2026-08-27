@@ -1,0 +1,11 @@
+{
+  "model_key": "gpt-oss-20b",
+  "text": "The slowest country is **ID**, with an average BWT of **4.20138**. This figure indicates the longest average processing time for buyers from that country. No further operational implication can be drawn from the single data point.",
+  "tokens_in": 182,
+  "tokens_out": 95,
+  "latency_s": 0.61,
+  "usd_cost": 6.6e-05,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

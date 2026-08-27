@@ -1,0 +1,11 @@
+{
+  "model_key": "qwen2.5-1.5b-local",
+  "text": "```sql\nSELECT \n    logistics_provider, \n    SUM(sum_apt) * 86400 / SUM(parcel_qty) AS avg_transit_minutes\nFROM \n    spx\nGROUP BY \n    logistics_provider\nORDER BY \n    avg_transit_minutes ASC\nLIMIT 1;\n```",
+  "tokens_in": 586,
+  "tokens_out": 50,
+  "latency_s": 79.89,
+  "usd_cost": 0.0,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

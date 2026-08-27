@@ -1,0 +1,4 @@
+persona,model,vendor,access,ok,error,grounded_figures,total_figures,hallucination_rate,ungrounded_examples,invented_metrics,coverage,findings_found,findings_missed,words,within_word_cap,sections_present,sections_required,latency_s,usd_cost,tokens_out,cached
+ops,qwen2.5-1.5b-local,Alibaba (local),local,True,,16,16,0.0,,"customer satisfaction, warehouse capacity",0.6086956521739131,3,"island_effect, sicepat_real",234,True,3,3,404.76,0.0,423,True
+management,qwen2.5-1.5b-local,Alibaba (local),local,True,,3,4,0.25,0.021,,0.18518518518518517,1,"campaign_lag, island_effect, simpsons, sicepat_real, domestic_only",223,True,3,3,971.03,0.0,381,True
+vendor,qwen2.5-1.5b-local,Alibaba (local),local,True,,45,45,0.0,,,0.6086956521739131,3,"island_effect, ninjavan_volatile",363,True,3,3,2382.72,0.0,637,True

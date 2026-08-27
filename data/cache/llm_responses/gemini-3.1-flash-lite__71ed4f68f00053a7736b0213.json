@@ -1,0 +1,11 @@
+{
+  "model_key": "gemini-3.1-flash-lite",
+  "text": "LBC Express is the provider that has degraded the most, showing a degradation value of 0.950626. This high figure indicates a significant decline in performance metrics that requires immediate investigation into their current operational processes.",
+  "tokens_in": 129,
+  "tokens_out": 47,
+  "latency_s": 1.02,
+  "usd_cost": 3.2e-05,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

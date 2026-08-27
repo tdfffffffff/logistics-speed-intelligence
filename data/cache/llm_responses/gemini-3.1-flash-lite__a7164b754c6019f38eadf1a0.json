@@ -1,0 +1,11 @@
+{
+  "model_key": "gemini-3.1-flash-lite",
+  "text": "The country with the slowest average business wait time (BWT) is ID, which recorded a value of 4.20138. This indicates that operations in this region are currently experiencing the longest processing delays. You should investigate local workflow bottlenecks in ID to improve overall throughput.",
+  "tokens_in": 121,
+  "tokens_out": 58,
+  "latency_s": 2.21,
+  "usd_cost": 3.5e-05,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

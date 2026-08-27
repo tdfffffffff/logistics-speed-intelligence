@@ -1,0 +1,9 @@
+step,action,rows_affected,parcels_affected,rationale
+00_load,loaded,8995,185886085,Raw rows as delivered in the CSV.
+01_duplicates,verified_none,0,0,"The 6-column grain key is unique (0 duplicates), so each row is one date x lane x provider cell and no double-counting is possible."
+02_unmapped_regions,normalised_and_flagged,325,6512306,"'Uknown' (typo, 145 rows) and null (132 rows) folded into 'UNKNOWN'. Two spellings implies two broken upstream paths. Retained for country/provider/global totals (3.5% of volume -- dropping would bias them); excluded from lane-level analysis only."
+03_negative_values,verified_none,0,0,"parcel_qty, sum_apt and sum_bwt must all be non-negative; elapsed time cannot be negative and a parcel count cannot be."
+04_zero_parcel_rows,quarantined,29,0,"29 rows report 0 parcels with sum_apt = sum_bwt = 0. They are arithmetically harmless inside SUM/SUM aggregates (adding 0 to both numerator and denominator) but produce 0/0 in row-level ratios. Removed for safety at zero cost to any total, since they carry no parcels."
+05_apt_exceeds_bwt,quarantined,32,619444,"32 rows have avg_APT > avg_BWT, which the brief's image1 timeline makes impossible (APT is a sub-interval of BWT). Excluded from headline speed metrics and handed in full to the BI and Data Engineering stakeholders -- for them these rows are the deliverable, not noise."
+06_extreme_intra_region,flagged_only,5,112786,5 same-region rows exceed 4 days against a ~1.4-day baseline. Retained: these are the operational incidents the Operations stakeholder needs to see. Deleting outliers would delete the finding.
+07_final,retained,8934,185266641,"8934 rows kept (99.32% of input), carrying 99.67% of all parcels."

@@ -1,0 +1,11 @@
+{
+  "model_key": "gpt-oss-120b",
+  "text": "**Where we stand**  \nAcross the four domestic markets we are moving 185\u202fmillion parcels at an average buyer\u2011waiting time (BWT) of **3.33\u202fdays** and an average seller\u2011preparation time (APT) of **0.76\u202fdays**. The week\u2011by\u2011week view shows BWT climbing from **3.22\u202fdays in W1** to **3.51\u202fdays in W5**, while APT rose from **0.74\u202fdays to 0.79\u202fdays**. Indonesia is the slowest market (BWT\u202f4.20\u202fdays) and accounts for the largest share of excess waiting time.  \n\n**What changed and why**  \nThe upward drift in BWT aligns with the timing of the six detected campaign spikes (early\u2011January). BWT jumps from **3.25\u202fdays on the campaign day** to **3.80\u202fdays the next day** and stays above 3.7\u202fdays for two days, indicating that volume spikes are pushing the system into a slower regime. The biggest structural drag comes from island\u2011crossing lanes \u2013 especially Indonesia (excess BWT\u202f3.45\u202fdays, **41\u202f% of total recoverable parcel\u2011days**) and Malaysia\u2019s island\u2011crossing lanes (excess BWT\u202f3.66\u202fdays, **27\u202f%**). Together these two segments represent **\u224868\u202f%** of the **213\u202fmillion recoverable parcel\u2011days** identified in the impact analysis.  \n\n**The one decision I need from you**  \nApprove a focused \u201cIsland\u2011Crossing Speed\u2011Up\u201d task force, led by Regional Operations, to (a) map the end\u2011to\u2011end flow for Indonesia and Malaysia island lanes, (b) pilot a 24\u2011hour \u201cpre\u2011stage\u201d hub model to cut APT on those lanes by at least **0.10\u202fdays**, and (c) set a target to bring BWT for the two island segments back to the benchmark median (\u22481.8\u202fdays) within the next quarter. Achieving even half of the identified **213\u202fmillion parcel\u2011days** of excess would translate into a tangible reduction in overall buyer waiting time and protect us from future campaign\u2011driven slowdowns.",
+  "tokens_in": 3138,
+  "tokens_out": 559,
+  "latency_s": 1.64,
+  "usd_cost": 0.00089,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

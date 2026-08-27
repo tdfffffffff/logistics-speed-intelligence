@@ -1,0 +1,11 @@
+{
+  "model_key": "gemini-3.1-flash-lite",
+  "text": "SELECT SUM(sum_bwt) / SUM(parcel_qty) AS avg_BWT FROM spx",
+  "tokens_in": 640,
+  "tokens_out": 23,
+  "latency_s": 4.94,
+  "usd_cost": 7.3e-05,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

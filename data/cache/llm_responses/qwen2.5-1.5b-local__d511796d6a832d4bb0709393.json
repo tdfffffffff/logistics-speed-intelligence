@@ -1,0 +1,11 @@
+{
+  "model_key": "qwen2.5-1.5b-local",
+  "text": "SiCepat is the slowest logistics provider, taking an average of 61732.4 minutes for transit times. This indicates that it has the longest delivery duration among the listed providers.",
+  "tokens_in": 133,
+  "tokens_out": 45,
+  "latency_s": 10.9,
+  "usd_cost": 0.0,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

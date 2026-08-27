@@ -1,0 +1,11 @@
+{
+  "model_key": "gemini-3.1-flash-lite",
+  "text": "MY has the most deliveries with a total of 4.87025e+07. This volume is closely followed by TH at 4.85582e+07, indicating a high concentration of logistics demand in these two regions. Operations should prioritize resource allocation and carrier capacity in MY to maintain service levels for this leading volume.",
+  "tokens_in": 181,
+  "tokens_out": 74,
+  "latency_s": 3.07,
+  "usd_cost": 4.8e-05,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

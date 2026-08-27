@@ -1,0 +1,11 @@
+{
+  "model_key": "qwen3.6-27b",
+  "text": "",
+  "tokens_in": 3542,
+  "tokens_out": 2800,
+  "latency_s": 6.13,
+  "usd_cost": 0.002679,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

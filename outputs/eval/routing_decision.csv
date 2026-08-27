@@ -1,0 +1,7 @@
+persona,persona_name,model,vendor,composite,hallucination,coverage,usd,runner_up,margin
+ops,Operations,gpt-oss-120b,OpenAI (open weights),0.7950615028620142,0.0238095238095238,0.391304347826087,0.001302,gemini-3.1-flash-lite,0.025560224089635653
+management,Management,gpt-oss-120b,OpenAI (open weights),0.6893868658574541,0.0952380952380952,0.2962962962962963,0.00089,gemini-3.1-flash-lite,0.0024587612822908333
+bi,Business Intelligence,gemini-3.1-flash-lite,Google,0.8979500891265597,0.0606060606060605,0.7999999999999999,0.000599,gpt-oss-20b,0.09433017962429724
+vendor,3PL Partner Management,gemini-3.1-flash-lite,Google,0.8721227621483376,0.0,0.5652173913043479,0.000663,gpt-oss-120b,0.11267605633802824
+capacity,Capacity & Network Planning,gpt-oss-20b,OpenAI (open weights),0.8358288770053475,0.0363636363636363,0.5,0.000588,gemini-3.1-flash-lite,0.0196524064171123
+dataeng,Data Engineering,gemini-3.1-flash-lite,Google,0.8858131487889273,0.1176470588235294,0.7999999999999999,0.000378,gpt-oss-20b,0.0034602076124568004

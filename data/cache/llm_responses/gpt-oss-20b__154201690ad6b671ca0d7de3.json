@@ -1,0 +1,11 @@
+{
+  "model_key": "gpt-oss-20b",
+  "text": "**Where we stand**  \nAcross the region we delivered 185\u202fmillion parcels with an average buyer\u2011waiting time (BWT) of 3.33\u202fdays. Seller preparation (APT) accounts for 22.8\u202f% of that, or 0.76\u202fdays on average. The fastest lanes are in the Philippines (BWT\u202f2.83\u202fdays) and the slowest in Indonesia (BWT\u202f4.20\u202fdays). The overall transit time is 2.57\u202fdays, so the remaining 0.76\u202fdays are spent in the seller\u2019s hands.\n\n**What changed and why**  \nBWT has slipped by roughly 0.1\u202fdays compared to the previous period, driven mainly by a 0.05\u2011day rise in APT. The biggest contributor is the \u201cIsland\u2011crossing\u201d segment in Indonesia, where BWT averages 5.63\u202fdays\u2014over 3.4\u202fdays above the benchmark. This segment alone represents 41\u202f% of the total recoverable parcel\u2011days (\u224888\u202fmillion). In contrast, the Inter\u2011region (land) lanes in Thailand and the Philippines are close to benchmark, with excess BWT of 0.85\u202fdays and 1.14\u202fdays respectively.\n\n**The one decision I need from you**  \nApprove a focused improvement program on Indonesia\u2019s island\u2011crossing lanes. By tightening seller\u2011prep processes and streamlining hand\u2011offs, we can shave 1.5\u202fdays from the current 5.63\u202fdays, capturing roughly 88\u202fmillion parcel\u2011days of opportunity\u2014equivalent to a 4\u202f% lift in overall BWT. The Regional Operations team will own the rollout, with a target of 0.5\u2011day reduction per month over the next six months.",
+  "tokens_in": 3138,
+  "tokens_out": 391,
+  "latency_s": 0.98,
+  "usd_cost": 0.000509,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

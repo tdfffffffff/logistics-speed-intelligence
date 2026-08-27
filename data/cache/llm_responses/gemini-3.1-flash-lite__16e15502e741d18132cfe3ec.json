@@ -1,0 +1,11 @@
+{
+  "model_key": "gemini-3.1-flash-lite",
+  "text": "SELECT buyer_country, SUM(sum_bwt) / SUM(parcel_qty) AS avg_BWT FROM spx GROUP BY 1 ORDER BY 2 DESC LIMIT 1;",
+  "tokens_in": 634,
+  "tokens_out": 40,
+  "latency_s": 1.46,
+  "usd_cost": 7.9e-05,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

@@ -1,0 +1,11 @@
+{
+  "model_key": "gpt-oss-20b",
+  "text": "The provider that has degraded the most between the first and last week is **LBC Express**, with a difference of **0.950626**.  \nIts performance increased from **3.29063** in the first week to **4.24126** in the last week, indicating a significant decline that may require operational review.",
+  "tokens_in": 461,
+  "tokens_out": 94,
+  "latency_s": 0.35,
+  "usd_cost": 9.3e-05,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

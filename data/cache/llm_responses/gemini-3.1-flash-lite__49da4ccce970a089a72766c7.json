@@ -1,0 +1,11 @@
+{
+  "model_key": "gemini-3.1-flash-lite",
+  "text": "WITH weekly_metrics AS (\n    SELECT \n        logistics_provider,\n        week_block,\n        SUM(sum_bwt) / SUM(parcel_qty) AS avg_bwt\n    FROM spx\n    GROUP BY 1, 2\n),\nbounds AS (\n    SELECT \n        logistics_provider,\n        MAX(CASE WHEN week_block = 'W1' THEN avg_bwt END) as start_bwt,\n        MAX(CASE WHEN week_block = 'W5' THEN avg_bwt END) as end_bwt\n    FROM weekly_metrics\n    GROUP BY 1\n    HAVING start_bwt IS NOT NULL AND end_bwt IS NOT NULL\n)\nSELECT \n    logistics_provider, \n    (end_bwt - start_bwt) AS degradation\nFROM bounds\nORDER BY degradation DESC\nLIMIT 1;",
+  "tokens_in": 639,
+  "tokens_out": 200,
+  "latency_s": 1.38,
+  "usd_cost": 0.000144,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

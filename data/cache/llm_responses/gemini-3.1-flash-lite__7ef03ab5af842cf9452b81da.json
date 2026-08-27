@@ -1,0 +1,11 @@
+{
+  "model_key": "gemini-3.1-flash-lite",
+  "text": "### Top issues (ranked)\n1. **R_23 > R_04 (LP_B):** 29,081 parcels, 15.427 avg_BWT (Baseline: 3.089).\n2. **R_07 > R_23 (LP_H):** 26,610 parcels, 13.389 avg_BWT (Baseline: 2.576).\n3. **R_08 > R_09 (LP_B):** 26,725 parcels, 14.298 avg_BWT (Baseline: 2.875).\n4. **R_20 > R_14 (LP_B):** 18,079 parcels, 15.884 avg_BWT (Baseline: 2.45).\n5. **R_26 > R_32 (LP_B):** 17,757 parcels, 15.766 avg_BWT (Baseline: 1.438).\n6. **R_38 > R_06 (LP_H):** 13,147 parcels, 15.903 avg_BWT (Baseline: 3.03).\n7. **R_33 > R_35 (LP_B):** 19,296 parcels, 10.537 avg_BWT (Baseline: 2.097).\n8. **R_11 > R_06 (LP_B):** 33,689 parcels, 10.543 avg_BWT (Baseline: 1.317).\n9. **R_16 > R_09 (LP_B):** 10,972 parcels, 11.489 avg_BWT (Baseline: 1.593).\n10. **R_14 > R_13 (LP_B):** 13,187 parcels, 10.062 avg_BWT (Baseline: 2.803).\n\n### Immediate actions\n* **LP_B Performance Review:** Regional Duty Manager to initiate corrective action for 53 flagged anomalies.\n* **LP_H Capacity Audit:** First Mile / Hub Operations to investigate R_07 > R_23 and R_38 > R_06 bottlenecks.\n* **Lane Recovery:** Regional Duty Manager to re-route volume from R_23 > R_04 and R_08 > R_09 to mitigate excess parcel days.\n\n### Watch list\n* **LP_B:** 53 anomalies identified.\n* **LP_A:** 13 anomalies identified.\n* **LP_C:** 12 anomalies identified.\n* **Island-crossing lanes:** 4.761 avg_BWT.\n* **Unmapped lanes:** 5.111 avg_BWT.",
+  "tokens_in": 3914,
+  "tokens_out": 679,
+  "latency_s": 2.65,
+  "usd_cost": 0.000663,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

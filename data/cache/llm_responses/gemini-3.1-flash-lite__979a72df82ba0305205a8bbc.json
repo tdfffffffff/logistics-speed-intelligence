@@ -1,0 +1,11 @@
+{
+  "model_key": "gemini-3.1-flash-lite",
+  "text": "MY has the most deliveries with a total of 4.87025e+07 parcels. This volume is closely followed by TH at 4.85582e+07, indicating that logistics capacity in these two regions should be prioritized to handle the highest throughput.",
+  "tokens_in": 180,
+  "tokens_out": 61,
+  "latency_s": 9.49,
+  "usd_cost": 4.2e-05,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

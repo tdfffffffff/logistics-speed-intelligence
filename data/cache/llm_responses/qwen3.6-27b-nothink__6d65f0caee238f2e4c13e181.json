@@ -1,0 +1,11 @@
+{
+  "model_key": "qwen3.6-27b-nothink",
+  "text": "Top issues (ranked)\n1. Lane R_23 > R_04, LP_B: avg_BWT 15.427 days (baseline 3.089). Excess 358,796 parcel-days. Owner: First Mile / hub operations.\n2. Lane R_08 > R_09, LP_B: avg_BWT 14.298 days (baseline 2.875). Excess 305,303 parcel-days. Owner: First Mile / hub operations.\n3. Lane R_11 > R_06, LP_B: avg_BWT 10.543 days (baseline 1.317). Excess 310,804 parcel-days. Owner: First Mile / hub operations.\n4. Lane R_07 > R_23, LP_H: avg_BWT 13.389 days (baseline 2.576). Excess 287,737 parcel-days. Owner: First Mile / hub operations.\n5. Lane R_20 > R_14, LP_B: avg_BWT 15.884 days (baseline 2.45). Excess 242,876 parcel-days. Owner: First Mile / hub operations.\n6. Lane R_26 > R_32, LP_B: avg_BWT 15.766 days (baseline 1.438). Excess 254,423 parcel-days. Owner: First Mile / hub operations.\n7. Lane R_38 > R_06, LP_H: avg_BWT 15.903 days (baseline 3.03). Excess 169,241 parcel-days. Owner: First Mile / hub operations.\n8. Lane R_33 > R_35, LP_B: avg_BWT 10.537 days (baseline 2.097). Excess 162,853 parcel-days. Owner: First Mile / hub operations.\n9. Lane R_16 > R_09, LP_B: avg_BWT 11.489 days (baseline 1.593). Excess 108,574 parcel-days. Owner: First Mile / hub operations.\n10. Lane R_14 > R_13, LP_B: avg_BWT 10.062 days (baseline 2.803). Excess 95,716 parcel-days. Owner: First Mile / hub operations.\n\nImmediate actions\n- LP_B dominates anomalies (53 of 103). Regional duty manager to audit LP_B hub throughput and first-mile pickup schedules for lanes R_23, R_08, R_11, R_20, R_26, R_33, R_16, R_14.\n- LP_H shows high matched_gap_vs_lane (0.548) and two top incidents. Regional duty manager to review LP_H capacity on lanes R_07 and R_38.\n- Unmapped lane class avg_BWT is 5.111 days. First Mile / hub operations to prioritize mapping these 6,512,306 parcels to reduce transit opacity.\n\nWatch list\n- LP_I has highest matched_gap_vs_lane (0.913) and naive_bwt (5.16). Monitor for escalation.\n- LP_C matched_gap_vs_lane is 0.391.\n- Island-crossing lane class avg_BWT is 4.761 days.\n- Overall avg_BWT is 3.33 days; apt_share_of_bwt_pct is 22.8%.",
+  "tokens_in": 3706,
+  "tokens_out": 840,
+  "latency_s": 32.14,
+  "usd_cost": 0.00157,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

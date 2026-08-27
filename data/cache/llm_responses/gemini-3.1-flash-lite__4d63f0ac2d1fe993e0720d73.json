@@ -1,0 +1,11 @@
+{
+  "model_key": "gemini-3.1-flash-lite",
+  "text": "SiCepat is the slowest logistics provider with an average delivery time of 5.15985 days. This indicates a need to review their current routing or carrier performance to reduce lead times and improve overall fulfillment speed.",
+  "tokens_in": 129,
+  "tokens_out": 46,
+  "latency_s": 2.49,
+  "usd_cost": 3.1e-05,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

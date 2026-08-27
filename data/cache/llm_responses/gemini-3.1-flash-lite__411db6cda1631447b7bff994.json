@@ -1,0 +1,11 @@
+{
+  "model_key": "gemini-3.1-flash-lite",
+  "text": "SELECT \n    buyer_country,\n    CASE \n        WHEN is_island_crossing THEN 'Island-crossing'\n        WHEN is_intra_region THEN 'Intra-region'\n        ELSE 'Other'\n    END AS lane_type,\n    SUM(sum_bwt) / SUM(parcel_qty) AS avg_BWT,\n    SUM(sum_apt) / SUM(parcel_qty) AS avg_APT,\n    (SUM(sum_bwt) / SUM(parcel_qty)) - (SUM(sum_apt) / SUM(parcel_qty)) AS avg_transit\nFROM spx\nWHERE is_island_crossing OR is_intra_region\nGROUP BY 1, 2\nORDER BY 1, 2;",
+  "tokens_in": 641,
+  "tokens_out": 167,
+  "latency_s": 4.82,
+  "usd_cost": 0.000131,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

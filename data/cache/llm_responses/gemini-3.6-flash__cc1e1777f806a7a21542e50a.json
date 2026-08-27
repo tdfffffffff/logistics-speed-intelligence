@@ -1,0 +1,11 @@
+{
+  "model_key": "gemini-3.6-flash",
+  "text": "### Top issues (ranked)\n\n1. **Lane R_23 > R_04** | **Provider LP_B**: avg_BWT 15.427 days vs 3.089 baseline (358796.0 excess parcel days across 29081 parcels). **Owner**: Regional duty manager\n2. **Lane R_11 > R_06** | **Provider LP_B**: avg_BWT 10.543 days vs 1.317 baseline (310804.0 excess parcel days across 33689 parcels). **Owner**: First Mile / hub operations\n3. **Lane R_08 > R_09** | **Provider LP_B**: avg_BWT 14.298 days vs 2.875 baseline (305303.0 excess parcel days across 26725 parcels). **Owner**: Regional duty manager\n4. **Lane R_07 > R_23** | **Provider LP_H**: avg_BWT 13.389 days vs 2.576 baseline (287737.0 excess parcel days across 26610 parcels). **Owner**: Regional duty manager\n5. **Lane R_26 > R_32** | **Provider LP_B**: avg_BWT 15.766 days vs 1.438 baseline (254423.0 excess parcel days across 17757 parcels). **Owner**: First Mile / hub operations\n\n---\n\n### Immediate actions\n\n1. Clear backlog on **Lane R_23 > R_04** with **LP_B** covering 29081 parcels at 15.427 avg_BWT. **Owner**: Regional duty manager\n2. Clear bottleneck on **Lane R_11 > R_06** with **LP_B** covering 33689 parcels at 10.543 avg_BWT. **Owner**: First Mile / hub operations\n3. Intervene on **Lane R_07 > R_23** with **LP_H** handling 26610 parcels at 13.389 avg_BWT. **Owner**: Regional duty manager\n4. Reroute volume on **Lane R_08 > R_09** from **LP_B** handling 26725 parcels at 14.298 avg_BWT. **Owner**: First Mile / hub operations\n\n---\n\n### Watch list\n\n1. **Lane R_38 > R_06** | **Provider LP_H**: Highest cell delay at 15.903 avg_BWT vs 3.03 baseline (13147 parcels). **Owner**: Regional duty manager\n2. **Lane R_20 > R_14** | **Provider LP_B**: Severe delay at 15.884 avg_",
+  "tokens_in": 3914,
+  "tokens_out": 669,
+  "latency_s": 24.95,
+  "usd_cost": 0.002847,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}

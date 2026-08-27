@@ -1,0 +1,11 @@
+{
+  "model_key": "gemini-3.1-flash-lite",
+  "text": "INSUFFICIENT_DATA",
+  "tokens_in": 638,
+  "tokens_out": 6,
+  "latency_s": 3.97,
+  "usd_cost": 6.6e-05,
+  "cached": false,
+  "ok": true,
+  "error": ""
+}
