@@ -35,8 +35,8 @@ def fig_campaign_backlog(df, campaign_days, lag_tbl, ci):
     colors = [CAT[1] if t in camp else CAT[0] for t in d["dt"]]
     ax1.bar(d["dt"], d["qty"] / 1e6, width=0.72, color=colors,
             edgecolor=SURFACE, linewidth=1.2, zorder=3)
-    viz.titled(ax1, "Parcel volume peaks on campaign days",
-               "Orange = detected campaign day (volume > 1 robust SD above median)")
+    viz.titled(ax1, "Parcel volume peaks on detected spike days",
+               "Orange = detected volume spike (> 1 robust SD above median)")
     ax1.set_ylabel("Parcels (millions)")
     for t in sorted(camp):
         v = d.loc[d["dt"] == t, "qty"].iloc[0] / 1e6
@@ -56,8 +56,8 @@ def fig_campaign_backlog(df, campaign_days, lag_tbl, ci):
         ax2.annotate(f"{r['bwt']:.2f}d", (r["dt"], r["bwt"]),
                      textcoords="offset points", xytext=(0, 9), ha="center",
                      fontsize=8, color=INK, fontweight="bold")
-    viz.titled(ax2, "Buyer waiting time degrades 1-2 days AFTER each campaign",
-               "Shaded band = the 48 hours following a campaign day")
+    viz.titled(ax2, "Buyer waiting time degrades 1-2 days AFTER each volume spike",
+               "Shaded band = the 48 hours following a volume spike")
     ax2.set_ylabel("avg_BWT (days)")
 
     # --- panel 3: the lag structure --------------------------------------
@@ -223,7 +223,7 @@ def fig_failure_modes(df, anomalies):
 
 
 def fig_anomaly_timeline(anomalies, campaign_days):
-    """When incidents happen, relative to the campaign calendar."""
+    """When incidents happen, relative to the detected volume spikes."""
     a = anomalies[anomalies["direction"] == "slower"].copy()
     camp = set(pd.to_datetime(campaign_days))
 
@@ -247,8 +247,8 @@ def fig_anomaly_timeline(anomalies, campaign_days):
                 linewidth=1.0, zorder=3)
     ax1.set_ylabel("Deviation from lane baseline (modified z)")
     ax1.set_yscale("log")
-    viz.titled(ax1, "Severe delay incidents cluster in the post-campaign window",
-               "Each dot = one lane x provider x day. Shaded = 48h after a campaign")
+    viz.titled(ax1, "Severe delay incidents cluster in the post-spike window",
+               "Each dot = one lane x provider x day. Shaded = 48h after a spike")
 
     # The same claim as a distribution, so it does not rest on eyeballing dots.
     counts = a["days_from_campaign"].value_counts().sort_index()
@@ -256,11 +256,11 @@ def fig_anomaly_timeline(anomalies, campaign_days):
     bars = ax2.bar(counts.index, counts.values, width=0.62, color=cols,
                    edgecolor=SURFACE, linewidth=1.2, zorder=3)
     viz.label_bars(ax2, bars, counts.values, fmt="{:.0f}", dy=0.6)
-    ax2.set_xlabel("Days from nearest campaign (negative = before)")
+    ax2.set_xlabel("Days from nearest volume spike (negative = before)")
     ax2.set_ylabel("Incidents")
     ax2.set_ylim(0, counts.max() * 1.2)
     share = 100 * counts.reindex([1, 2]).fillna(0).sum() / counts.sum()
-    viz.titled(ax2, f"{share:.0f}% of severe incidents land 1-2 days after a campaign",
+    viz.titled(ax2, f"{share:.0f}% of severe incidents land 1-2 days after a spike",
                "Independent confirmation of the lag found in the correlation analysis")
     return fig
 

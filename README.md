@@ -31,7 +31,7 @@ the database.
 
 | # | Finding | Operational Implication |
 |---|---|---|
-| **1** | Buyer waiting time deteriorates **one to two days after campaigns**, rather than during them (lag-2 `r = 0.886`) | Campaign dates are known in advance, allowing post-campaign capacity to be planned |
+| **1** | Buyer waiting time deteriorates **one to two days after a volume spike**, rather than during it (lag-2 `r = 0.886`) | The spikes recur on a regular nine-day cycle and are forecastable from the series itself, allowing post-spike capacity to be planned |
 | **2** | Island-crossing lanes average **4.76 days**, versus **1.35 days** for same-region lanes | The primary constraint is structural; inter-island linehaul capacity should be prioritised |
 | **3** | Seller preparation time is approximately **0.76 days** across the network | Seller-side intervention is unlikely to materially improve buyer waiting time |
 | **4** | Raw carrier rankings are confounded by **lane composition** | Geography must be controlled before attributing performance differences to carriers |
@@ -133,7 +133,7 @@ TanDanFeng_regspx_eda_llm_take_home_assignment/
 │   ├── env.py                   # API key loading and availability reporting
 │   ├── clean.py                 # Defect detection, classification and audit logging
 │   ├── metrics.py               # Weighted metrics and aggregation grains
-│   ├── features.py              # Lane taxonomy, campaign detection and baselines
+│   ├── features.py              # Lane taxonomy, volume-spike detection and baselines
 │   ├── analysis.py              # Anomaly detection, confounder control and impact sizing
 │   ├── factpack.py              # Fact-pack generation
 │   ├── privacy.py               # Pseudonymisation before model transmission
@@ -187,9 +187,10 @@ directly comparable. This constraint is documented in Section 13.1.
 
 ### 5.3 Limitations
 
-1. The dataset covers 30 days, representing approximately three campaign cycles. The campaign-lag finding
+1. The dataset covers 30 days, representing approximately three spike cycles. The spike-lag finding
    therefore rests on a small number of events.
-2. The campaign relationship is correlational, not causal. A confirmatory operational experiment is proposed
+2. The spike-backlog relationship is correlational, not causal, and the cause of the spikes themselves is not
+   established. A confirmatory operational experiment is proposed
    in Section 17.1.
 3. No service-level agreement or promised delivery date is available; performance can therefore be described
    as slow, but not formally as late.

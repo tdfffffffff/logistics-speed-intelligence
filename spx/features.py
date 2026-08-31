@@ -3,6 +3,10 @@
 The important one is `detect_campaign_days`: the volume spikes in this dataset
 are *found* from the signal, not hardcoded as dates. Hardcoding would produce a
 notebook that silently breaks the first time it sees a different month.
+
+Naming note: the `campaign` prefix is a convention retained across the feature
+names, the fact pack and the SQL schema. It is not a claim about cause -- see
+`detect_campaign_days` below.
 """
 from __future__ import annotations
 
@@ -14,13 +18,21 @@ from spx.metrics import add_week_block, weighted_metrics
 
 
 def detect_campaign_days(df: pd.DataFrame, z_threshold: float = 1.0) -> pd.DatetimeIndex:
-    """Find campaign/sale days from the volume signal itself.
+    """Find recurring volume-spike days from the volume signal itself.
 
-    Shopee runs double-date campaigns (1.1, 15.1, 25.1 ...) which produce sharp
-    order spikes. Rather than naming dates, we flag any day whose total volume
-    sits `z_threshold` robust standard deviations above the median. A robust
-    (median/MAD) statistic is used because the spikes themselves would inflate
-    a mean/std and mask the very days we are hunting for.
+    Any day whose total volume sits `z_threshold` robust standard deviations
+    above the median is flagged. A robust (median/MAD) statistic is used
+    because the spikes themselves would inflate a mean/std and mask the very
+    days we are hunting for.
+
+    What this returns is a set of *volume spikes*, not confirmed sale events.
+    In this dataset the spikes are unambiguous (z = 3.0-4.4 against a highest
+    unflagged day of z = 0.76, stable for any threshold in 1.0-3.0) but their
+    cause is not established: they recur on an exact nine-day cycle matching no
+    commercial calendar, rotate across days of the week, and 1 January -- the
+    largest scheduled sale date in the region -- is below median. The function
+    name is kept for continuity with the fact-pack and SQL column names; treat
+    the output as "recurring demand pulse", not "campaign".
     """
     daily = df.groupby("dt")["parcel_qty"].sum()
     med = daily.median()

@@ -45,7 +45,7 @@ class GoldenFinding:
 
 GOLDEN_SET: list[GoldenFinding] = [
     GoldenFinding("campaign_lag",
-        "BWT degrades 1-2 days after a campaign volume spike (peak lag r=0.886)",
+        "BWT degrades 1-2 days after a volume spike (peak lag r=0.886)",
         [["campaign", "sale", "spike", "peak", "surge"],
          ["after", "lag", "following", "subsequent", "later", "day 1", "day 2"]],
         1.0, ["management", "capacity", "ops"]),

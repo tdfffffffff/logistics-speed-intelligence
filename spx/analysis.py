@@ -115,7 +115,7 @@ def block_bootstrap_ci(df: pd.DataFrame, lag: int = 2, block: int = 5,
     """Confidence interval for a lagged correlation on an autocorrelated series.
 
     A plain correlation CI assumes independent observations. Daily logistics
-    volume is strongly autocorrelated (campaigns last two days, weekends
+    volume is strongly autocorrelated (spikes last two days, weekends
     repeat), so that assumption overstates precision. A moving-block bootstrap
     resamples contiguous blocks instead of individual days, preserving the
     short-range dependence and giving an honest interval.

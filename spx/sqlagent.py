@@ -40,8 +40,8 @@ Columns you may use:
   week_block          TEXT      W1..W5 (fixed 7-day blocks from the first date)
   day_of_week         TEXT
   is_weekend          BOOLEAN
-  is_campaign_day     BOOLEAN   detected sale-day volume spike
-  days_from_campaign  INTEGER   signed days to nearest campaign (negative = before)
+  is_campaign_day     BOOLEAN   detected volume spike (recurring demand pulse; cause not established)
+  days_from_campaign  INTEGER   signed days to nearest volume spike (negative = before)
   avg_BWT             DOUBLE    per-row rate - do NOT average this, see below
   avg_APT             DOUBLE    per-row rate - do NOT average this
   avg_transit         DOUBLE    avg_BWT - avg_APT
