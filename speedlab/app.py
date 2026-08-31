@@ -22,15 +22,15 @@ import html as _html
 import gradio as gr
 import pandas as pd
 
-from spx import config
-from spx.analysis import detect_anomalies
-from spx.evaluate import score_report
-from spx.factpack import collect_numbers
-from spx.guardrails import check_grounding
-from spx.llm import MODELS, LLMClient, available_models
-from spx.personas import PERSONAS, build_system_prompt, build_user_prompt
-from spx.privacy import Pseudonymiser
-from spx.sqlagent import DEMO_QUESTIONS, SQLAgent
+from speedlab import config
+from speedlab.analysis import detect_anomalies
+from speedlab.evaluate import score_report
+from speedlab.factpack import collect_numbers
+from speedlab.guardrails import check_grounding
+from speedlab.llm import MODELS, LLMClient, available_models
+from speedlab.personas import PERSONAS, build_system_prompt, build_user_prompt
+from speedlab.privacy import Pseudonymiser
+from speedlab.sqlagent import DEMO_QUESTIONS, SQLAgent
 
 # Each demo question paired with what it is testing, so a first-time user
 # understands *why* the last two are supposed to be refused. Without this the
@@ -54,17 +54,17 @@ QUESTION_GUIDE = [
      "the SQL. FAIL = red BLOCKED, because the guardrail rejects AVG() over a "
      "speed ratio before it can run."),
 ]
-from spx.theme import CSS, shopee_theme
+from speedlab.theme import CSS, shopee_theme
 
 
 def _cards(items) -> str:
     """Metric cards. `items` = (label, value, note, tone, tooltip)."""
-    out = ["<div class='spx-cards'>"]
+    out = ["<div class='sl-cards'>"]
     for label, value, note, tone, tip in items:
-        lab = (f"<span class='spx-help' data-tip=\"{_html.escape(tip)}\">{label}</span>"
+        lab = (f"<span class='sl-help' data-tip=\"{_html.escape(tip)}\">{label}</span>"
                if tip else label)
         out.append(
-            f"<div class='spx-card {tone}'><div class='k'>{lab}</div>"
+            f"<div class='sl-card {tone}'><div class='k'>{lab}</div>"
             f"<div class='v'>{value}</div><div class='n'>{note}</div></div>")
     out.append("</div>")
     return "".join(out)
@@ -74,7 +74,7 @@ def build_demo():
     # Load .env HERE, not just in the notebook. Without this a standalone
     # `python app.py` sees no API keys, falls back to the on-device 1.5B model,
     # and every question takes ~16 minutes -- which looks like the app hanging.
-    from spx.env import load_env
+    from speedlab.env import load_env
     load_env(verbose=False)
 
     df = pd.read_parquet(config.CLEAN_PARQUET)
@@ -130,7 +130,7 @@ def build_demo():
                     or "quota" in turn.error.lower() or "rate limit" in turn.error.lower()
                     else "Check the model is reachable, or pick another from the dropdown.")
             msg = (f"MODEL UNREACHABLE &mdash; the guardrail never ran, because no query "
-                   f"was produced.<br><span class='spx-errdetail'>{short}</span>"
+                   f"was produced.<br><span class='sl-errdetail'>{short}</span>"
                    f"<br><b>{hint}</b>")
         elif turn.abstained:
             cls, msg = "abst", "ABSTAINED &mdash; not answerable from the available columns"
@@ -145,16 +145,16 @@ def build_demo():
             import re as _re
             sql_l = (turn.sql or "").lower()
             if _re.search(r"sum\s*\(\s*sum_(bwt|apt)\s*\)\s*/\s*sum\s*\(\s*parcel_qty\s*\)", sql_l):
-                msg += ("<br><span class='spx-rule'>Weighted-average rule <b>satisfied</b>: the model "
+                msg += ("<br><span class='sl-rule'>Weighted-average rule <b>satisfied</b>: the model "
                         "wrote <code>SUM(&hellip;)/SUM(parcel_qty)</code>, not <code>AVG(&hellip;)</code>. "
                         "Had it written the unweighted form, this query would have been blocked "
                         "before execution.</span>")
             elif _re.search(r"\bavg\s*\(", sql_l):
-                msg += ("<br><span class='spx-rule'>Note: <code>AVG()</code> is used here, but not over a "
+                msg += ("<br><span class='sl-rule'>Note: <code>AVG()</code> is used here, but not over a "
                         "speed ratio &mdash; the weighted-average rule does not apply to this query.</span>")
         else:
             cls, msg = "block", f"BLOCKED &mdash; {_html.escape(turn.guard_reason[:150])}"
-        verdict = f"<div class='spx-verdict {cls}'>{msg}</div>"
+        verdict = f"<div class='sl-verdict {cls}'>{msg}</div>"
 
         result = turn.result if turn.result is not None else pd.DataFrame({"(no rows)": []})
         rows = len(turn.result) if turn.result is not None else 0
@@ -225,10 +225,10 @@ def build_demo():
         origin = ("auto-selected by the routing table" if routed and not fell_back
                   else (f"fell back from {routed}, which was unavailable" if fell_back
                         else "chosen manually"))
-        note = (f"<div class='spx-note'><b>Model:</b> {mk} &middot; {MODELS[mk]['vendor']} "
+        note = (f"<div class='sl-note'><b>Model:</b> {mk} &middot; {MODELS[mk]['vendor']} "
                 f"&middot; {MODELS[mk]['access']} &middot; {origin}"
                 f"<br><b>Unverified figures:</b> {_html.escape(str(flags))}</div>")
-        return f"<div class='spx-brief'>\n\n{text}\n\n</div>", cards, note
+        return f"<div class='sl-brief'>\n\n{text}\n\n</div>", cards, note
 
     def persona_hint(persona_key, use_routing=True):
         p = PERSONAS[persona_key]
@@ -236,7 +236,7 @@ def build_demo():
         extra = (f"<br><b>Routing table picks:</b> {routed} "
                  f"&mdash; untick “Use routing table” to force the model on the right instead."
                  if (use_routing and routed) else "")
-        return (f"<div class='spx-note'><b>{p.audience}</b> &mdash; “{_html.escape(p.question)}”<br>"
+        return (f"<div class='sl-note'><b>{p.audience}</b> &mdash; “{_html.escape(p.question)}”<br>"
                 f"Sections: {' &middot; '.join(p.sections)}{extra}</div>")
 
     def do_anoms(n, provider, direction):
@@ -284,13 +284,13 @@ def build_demo():
         return cards, client.cost_report().round(5)
 
     # ------------------------------------------------------------------ UI
-    with gr.Blocks(title="SPX Speed Intelligence", fill_width=True) as demo:
+    with gr.Blocks(title="Speed Intelligence", fill_width=True) as demo:
         gr.HTML(
-            f"""<div class='spx-masthead'>
-              <div class='spx-title'>SPX Speed Intelligence</div>
-              <div class='spx-sub'>Ask in plain English. Get audience-specific operations briefs
+            f"""<div class='sl-masthead'>
+              <div class='sl-title'>Speed Intelligence</div>
+              <div class='sl-sub'>Ask in plain English. Get audience-specific operations briefs
               backed by specific evidence, with every figure verified against the source data.</div>
-              <div class='spx-pill'><span class='spx-dot'></span>{mode_txt}</div>
+              <div class='sl-pill'><span class='sl-dot'></span>{mode_txt}</div>
             </div>""")
         gr.HTML(_cards([
             ("Buyer waiting", f"{h['avg_BWT_days']}d", "avg_BWT, month", "",
@@ -308,7 +308,7 @@ def build_demo():
                 "The agent writes SQL, a **deterministic guardrail** decides whether it may run, "
                 "then it explains the result. The working is shown so you can see when to distrust it.")
             gr.HTML(
-                "<div class='spx-trapnote'><b>Two of these are deliberate traps</b> &mdash; planted to "
+                "<div class='sl-trapnote'><b>Two of these are deliberate traps</b> &mdash; planted to "
                 "test the two ways this system could produce a confidently wrong number. "
                 "<b>They have different success signals:</b><br>"
                 "&nbsp;&nbsp;• <b>“refusing = passing”</b> &mdash; the question is unanswerable, so a "
@@ -332,7 +332,7 @@ def build_demo():
                             is_trap = "TRAP" in tag
                             b = gr.Button(
                                 f"{tag.upper()}\n{text}",
-                                elem_classes=["spx-qbtn"] + (["trap"] if is_trap else []),
+                                elem_classes=["sl-qbtn"] + (["trap"] if is_trap else []),
                                 size="sm", variant="secondary")
                             q_buttons.append((b, text))
             for b, text in q_buttons:

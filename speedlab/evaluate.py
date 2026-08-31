@@ -24,7 +24,7 @@ from dataclasses import dataclass, field
 import numpy as np
 import pandas as pd
 
-from spx.guardrails import (check_abstention, check_grounding,
+from speedlab.guardrails import (check_abstention, check_grounding,
                             check_unsupported_metrics)
 
 

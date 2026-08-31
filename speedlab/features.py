@@ -13,8 +13,8 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
-from spx.config import ISLAND_REGIONS, UNKNOWN_SENTINEL
-from spx.metrics import add_week_block, weighted_metrics
+from speedlab.config import ISLAND_REGIONS, UNKNOWN_SENTINEL
+from speedlab.metrics import add_week_block, weighted_metrics
 
 
 def detect_campaign_days(df: pd.DataFrame, z_threshold: float = 1.0) -> pd.DatetimeIndex:

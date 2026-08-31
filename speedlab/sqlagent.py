@@ -18,9 +18,9 @@ from dataclasses import dataclass, field
 import duckdb
 import pandas as pd
 
-from spx.guardrails import ABSTAIN_TOKEN, check_grounding, validate_sql
+from speedlab.guardrails import ABSTAIN_TOKEN, check_grounding, validate_sql
 
-SCHEMA_NOTE = """TABLE spx  (one row per date x lane x logistics_provider)
+SCHEMA_NOTE = """TABLE deliveries  (one row per date x lane x logistics_provider)
 
 Columns you may use:
   dt                  DATE      report date
@@ -100,8 +100,11 @@ class SQLAgent:
         # A read-only connection over an in-memory copy: even if every static
         # check were bypassed, there is nothing here to damage.
         self.con = duckdb.connect(":memory:")
-        self.con.register("spx_src", df)
-        self.con.execute("CREATE TABLE spx AS SELECT * FROM spx_src")
+        self.con.register("_src", df)
+        self.con.execute("CREATE TABLE deliveries AS SELECT * FROM _src")
+        # Compatibility view: cached model responses generated against the
+        # previous table name still execute unchanged.
+        self.con.execute("CREATE VIEW spx AS SELECT * FROM deliveries")
         self.con.execute("SET enable_external_access=false")
         self.columns = set(df.columns)
         self.client = client

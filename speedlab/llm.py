@@ -23,7 +23,7 @@ import re
 import time
 from dataclasses import asdict, dataclass, field
 
-from spx.config import CACHE_DIR
+from speedlab.config import CACHE_DIR
 
 # --------------------------------------------------------------- registry
 # usd_in / usd_out are per 1M tokens, at published list prices. `tier` records

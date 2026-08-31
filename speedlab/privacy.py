@@ -73,7 +73,7 @@ class Pseudonymiser:
 _PII_PATTERNS = [
     (re.compile(r"[\w.+-]+@[\w-]+\.[\w.]+"), "[EMAIL_REDACTED]"),
     (re.compile(r"\+?\d[\d\s-]{8,}\d"), "[PHONE_REDACTED]"),
-    (re.compile(r"\bSPX\d{6,}\b", re.I), "[TRACKING_REDACTED]"),
+    (re.compile(r"\bTRK\d{6,}\b", re.I), "[TRACKING_REDACTED]"),
 ]
 
 

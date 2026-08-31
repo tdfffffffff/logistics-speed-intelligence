@@ -22,9 +22,9 @@ from datetime import datetime
 import numpy as np
 import pandas as pd
 
-from spx.analysis import (block_bootstrap_ci, detect_anomalies, impact_sizing,
+from speedlab.analysis import (block_bootstrap_ci, detect_anomalies, impact_sizing,
                           lag_correlation, provider_naive_vs_matched)
-from spx.metrics import spec_grain, weighted_metrics
+from speedlab.metrics import spec_grain, weighted_metrics
 
 
 def _r(x, n=3):

@@ -1,6 +1,6 @@
 """The brief's speed metrics — implemented once, used everywhere.
 
-The assignment defines two weighted-average metrics:
+Two weighted-average metrics anchor the analysis:
 
     avg_BWT = SUM(sum_bwt) / SUM(parcel_qty)
     avg_APT = SUM(sum_apt) / SUM(parcel_qty)
@@ -73,7 +73,7 @@ def add_week_block(df: pd.DataFrame, date_col: str = "dt") -> pd.DataFrame:
 
 def spec_grain(df: pd.DataFrame, grain: str) -> pd.DataFrame:
     """Compute one of the four grains mandated by the brief's image2."""
-    from spx.config import SPEC_GRAINS
+    from speedlab.config import SPEC_GRAINS
 
     if grain not in SPEC_GRAINS:
         raise KeyError(f"{grain!r} is not one of the brief's grains: {list(SPEC_GRAINS)}")

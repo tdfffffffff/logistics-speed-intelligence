@@ -15,7 +15,7 @@ from __future__ import annotations
 
 import pandas as pd
 
-from spx.config import UNKNOWN_REGION_TOKENS, UNKNOWN_SENTINEL
+from speedlab.config import UNKNOWN_REGION_TOKENS, UNKNOWN_SENTINEL
 
 REGION_COLS = ["buyer_region", "seller_region"]
 GRAIN_KEY = ["dt", "buyer_country", "buyer_region", "seller_country",

@@ -10,7 +10,7 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
-from spx.metrics import weighted_metrics
+from speedlab.metrics import weighted_metrics
 
 
 # --------------------------------------------------------------- anomalies

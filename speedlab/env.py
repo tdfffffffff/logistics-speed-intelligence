@@ -6,12 +6,12 @@ the comparison ran live versus replayed from cache.
 """
 from __future__ import annotations
 
-from spx.config import ROOT
+from speedlab.config import ROOT
 
 
 def load_env(verbose: bool = True) -> dict[str, bool]:
     """Read ROOT/.env if present, then report which providers are reachable."""
-    from spx.llm import ENV_KEYS, MODELS, available_models
+    from speedlab.llm import ENV_KEYS, MODELS, available_models
     try:
         from dotenv import load_dotenv
         load_dotenv(ROOT / ".env", override=False)

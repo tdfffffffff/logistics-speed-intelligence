@@ -1,7 +1,7 @@
-"""Visual theme for the prototype: Shopee-family palette, typography, interactions.
+"""Visual theme for the prototype: palette, typography, interactions.
 
-Colours follow Shopee's brand family (the SPX Express orange `#EE4D2D` as the
-primary action colour) so the tool reads as an internal Shopee product rather
+A warm logistics-orange (`#EE4D2D`) is used as the primary action colour so the
+tool reads as a purpose-built internal product rather
 than a generic dashboard.
 
 One deliberate exception: **the charts do not use this palette.** Brand orange

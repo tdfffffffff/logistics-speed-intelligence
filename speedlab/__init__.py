@@ -1,4 +1,4 @@
-"""SPX Speed Intelligence — reusable toolkit for the Regional SPX Express take-home.
+"""Speed Intelligence — a reusable toolkit for regional parcel-logistics analysis.
 
 Layer map
 ---------

@@ -1,15 +1,15 @@
-"""Central configuration: paths, and the brief's own specification encoded as data.
+"""Central configuration: paths, and the analysis specification encoded as data.
 
-Everything the assignment brief mandates lives here as a constant so that the
-notebook can *assert* compliance rather than claim it.
+Every requirement lives here as a constant so that the notebook can *assert*
+compliance rather than claim it.
 """
 from pathlib import Path
 
 # ---------------------------------------------------------------- paths
 ROOT = Path(__file__).resolve().parent.parent
-RAW_CSV = ROOT / "data" / "raw" / "llm_test_dataset_20260610-170741.csv"
-CLEAN_PARQUET = ROOT / "data" / "clean" / "spx_clean.parquet"
-QUARANTINE_PARQUET = ROOT / "data" / "clean" / "spx_quarantine.parquet"
+RAW_CSV = ROOT / "data" / "raw" / "parcel_deliveries_202601.csv"
+CLEAN_PARQUET = ROOT / "data" / "clean" / "deliveries_clean.parquet"
+QUARANTINE_PARQUET = ROOT / "data" / "clean" / "deliveries_quarantine.parquet"
 AUDIT_LOG = ROOT / "data" / "clean" / "cleaning_audit_log.csv"
 CACHE_DIR = ROOT / "data" / "cache" / "llm_responses"
 FIGURES = ROOT / "outputs" / "figures"
@@ -19,7 +19,7 @@ EVAL = ROOT / "outputs" / "eval"
 ASSETS = ROOT / "assets"
 
 # ------------------------------------------------- the brief's data dictionary
-# Verbatim from the assignment brief. Used to assert we consume every column.
+# The source data dictionary. Used to assert we consume every column.
 DATA_DICTIONARY = {
     "dt": "date of report",
     "buyer_country": "buyer country",

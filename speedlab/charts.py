@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from spx import viz
-from spx.metrics import weighted_metrics
-from spx.viz import CAT, DIV, GRID, INK, INK_2, INK_MUTED, SEQ, STATUS, SURFACE
+from speedlab import viz
+from speedlab.metrics import weighted_metrics
+from speedlab.viz import CAT, DIV, GRID, INK, INK_2, INK_MUTED, SEQ, STATUS, SURFACE
 
 
 def _daily(df):
@@ -328,7 +328,7 @@ def fig_impact(df):
     carrying 600k. Ranking by rate alone sends the team to the wrong place;
     this converts rate into a quantity of buyer waiting that can be recovered.
     """
-    from spx.analysis import impact_sizing
+    from speedlab.analysis import impact_sizing
     imp = impact_sizing(df[~df["has_unknown_endpoint"]], ["buyer_country", "lane_class"])
     imp = imp[imp["recoverable_parcel_days"] > 0].head(8).iloc[::-1]
     labels = imp["buyer_country"] + "  " + imp["lane_class"]

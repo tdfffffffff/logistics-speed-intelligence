@@ -13,7 +13,7 @@ from docx import Document
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.shared import Inches, Pt, RGBColor
 
-from spx.config import FIGURES
+from speedlab.config import FIGURES
 
 INK = RGBColor(0x0B, 0x0B, 0x0B)
 MUTED = RGBColor(0x52, 0x51, 0x4E)
@@ -73,7 +73,7 @@ def build_insight_brief(pack: dict, reports: dict, routing, out_path) -> Path:
 
     # ---------------------------------------------------------- title
     t = doc.add_paragraph()
-    r = t.add_run("SPX Express — Regional Speed Review")
+    r = t.add_run("Regional Speed Review")
     r.bold, r.font.size, r.font.color.rgb = True, Pt(19), INK
     sub = doc.add_paragraph()
     r = sub.add_run(f"{meta['date_range'][0]} to {meta['date_range'][1]}  ·  "
