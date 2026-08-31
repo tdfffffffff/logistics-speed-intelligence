@@ -58,8 +58,15 @@ def add_time_features(df: pd.DataFrame, campaign_days=None) -> pd.DataFrame:
     # Signed distance in days to the nearest campaign. Negative = before a
     # campaign, positive = after. The "after" side is where backlog lives.
     if len(campaign_days):
-        camp = np.array([d.value for d in campaign_days])
-        deltas = (out["dt"].values.astype("int64")[:, None] - camp[None, :]) / 86_400_000_000_000
+        # Subtract as datetime64, not as raw int64. `dt` arrives as
+        # datetime64[us] when parsed from the CSV but datetime64[ns] when read
+        # back from the parquet, while `Timestamp.value` is always ns. Mixing
+        # the two is off by 1000x and silently collapses every row to the same
+        # constant (~-20440, i.e. the date as days since epoch) instead of
+        # raising. numpy handles the unit promotion correctly.
+        dt64 = pd.DatetimeIndex(out["dt"]).values
+        camp = pd.DatetimeIndex(campaign_days).values
+        deltas = (dt64[:, None] - camp[None, :]) / np.timedelta64(1, "D")
         nearest = np.argmin(np.abs(deltas), axis=1)
         out["days_from_campaign"] = deltas[np.arange(len(out)), nearest].astype(int)
     else:
